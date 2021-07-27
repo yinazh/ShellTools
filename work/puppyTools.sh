@@ -150,6 +150,11 @@ function openKidsDebug(){
 	fi
 }
 
+function resetKidsGuide(){
+    connectM1;
+	aWriteProp persist.sys.kidsguide false;
+}
+
 function setCameraSdkUseTime(){
    if [ "$1" ];then
       adb shell am broadcast -a com.puppy.camera.sdk.test --ei authed_time $1;
