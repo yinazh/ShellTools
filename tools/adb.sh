@@ -149,6 +149,17 @@ alias aMAC='adb shell cat sys/class/net/wlan0/address'  #读取mac地址
 alias aWmSize='adb shell wm size' #查看屏幕分辨率
 alias aDensity='adb shell wm density' #查看屏幕密度
 
+alias aSystem='adb shell settings list system'
+alias aGlobal='adb shell settings list global'
+alias aSecure='adb shell settings list secure'
+alias aGetSystem='adb shell settings get system'
+alias aGetGlobal='adb shell settings get global'
+alias aGetSecure='adb shell settings get secure'
+alias aPutSystem='adb shell settings put system'
+alias aPutGlobal='adb shell settings put global'
+alias aPutSecure='adb shell settings put secure'
+
+
 #####获取系统版本号
 function afindPkgVersion(){
 	if [ "$1" ];then
