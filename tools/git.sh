@@ -1,16 +1,16 @@
 #!/bin/sh
 
 ## for git tools
-alias gad='git add .'
-alias gpl='git pull'
-alias gst='git status .'
-alias gcm='git commit -m'
-alias gpm='git push -u origin HEAD:refs/for/master'
-alias gpd='git push -u origin master'
-alias gp='git push -u origin'
-alias glog="git log"
-alias glogS="git log -p"
-alias glogshow="git log --pretty=oneline"
+alias gAdda='git add .'
+alias gAdd='git add'
+alias gPul='git pull'
+alias gSta='git status .'
+alias gCom='git commit -m'
+alias gPushMaster='git push -u origin HEAD:refs/for/master'
+alias gPush='git push -u origin'
+alias gLog="git log"
+alias gLogS="git log -p"
+alias gLogshow="git log --pretty=oneline"
 alias gShow="git show"
 
 
@@ -31,4 +31,4 @@ function uploadGidLabCode(){
 }
 
 ## for github
-alias gpMain='git push -u origin main'
+alias gPushMain='git push -u origin main'
