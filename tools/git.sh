@@ -29,3 +29,6 @@ function uploadGidLabCode(){
 	   echo $COMMIT_INFO
    fi
 }
+
+## for github
+alias gpMain='git push -u origin main'
