@@ -2,6 +2,11 @@
 
 ## for adb tools
 
+### adb服务指令
+alias aStartServ='adb start-server'
+alias aKillServ='adb kill-server'
+
+
 ### 操作指令
 alias ashl='adb shell'
 alias aroot='adb root'
@@ -15,6 +20,10 @@ alias adisconn='adb disconnect'
 alias ainstal='adb install '
 alias ainstar='adb install -r'
 alias auinstal='adb uninstall'
+## -k 保留应用配置和缓存文件
+alias auninstak='adb uninstall -k'
+
+alias aShutDown='adb shell reboot -p'
 
 ### 模拟操作
 alias apul='adb pull'
@@ -135,6 +144,7 @@ function adumpPkgFile(){
 ### 模式权限相关
 alias aSideLoad='adb sideload'
 alias aBootloader='adb reboot bootloader'
+alias aRecovery='adb reboot recovery'
 alias aEdl='adb reboot edl'
 alias aDisVerity='adb disable-verity'
 
@@ -148,6 +158,7 @@ alias aModel='adb shell getprop ro.product.model'  #设备型号
 alias aMAC='adb shell cat sys/class/net/wlan0/address'  #读取mac地址
 alias aWmSize='adb shell wm size' #查看屏幕分辨率
 alias aDensity='adb shell wm density' #查看屏幕密度
+alias aDeviceId='adb get-serialno'
 
 alias aSystem='adb shell settings list system'
 alias aGlobal='adb shell settings list global'
@@ -175,6 +186,10 @@ function afindPkgVersion(){
 alias aListPackages='adb shell pm list packages'
 alias aListSystemPackages='adb shell pm list packages -s' #列出系统应用的所有包名
 alias aListThirdPackages='adb shell pm list packages -3'  #列出除了系统应用的第三方应用包名
+alias aListPackage='adb shell am monitor'
+
+### 调试应用：
+alias aFindFocus='adb shell dumpsys window | findstr mCurrentFocus'
 
 ### 录屏/截屏
 alias aScreenRecord='adb shell screenrecord /sdcard/filename.mp4'
@@ -182,6 +197,17 @@ function screenCap(){
    adb shell system/bin/screencap -p sdcard/cap.png;
    adb pull sdcard/cap.png D:/;
    adb shell rm sdcard/cap.png;
+}
+
+### Monkey测试指令
+alias aMonkey='adb shell monkey'
+
+function aMonkeyPkg100(){
+	if [ "$1" ];then
+       adb shell monkey -p $1 100
+    else
+       echo "application packageName is null, please check"
+    fi
 }
 
 

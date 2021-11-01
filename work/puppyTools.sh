@@ -12,6 +12,7 @@ function xgSign(){
   local SIGN_TOOLS_PATH
   if [ -z "$1" ] ;then
       echo "unsign application is null..."
+	  return
   else
     if [ "$2" == "old" ] ;then
         echo "old sign ..."
@@ -27,6 +28,17 @@ function xgSign(){
     mv ${LOCAL_PATH}/app_sign.apk ${UNSIGN_FILENAME}
     echo "sign completed"
   fi
+}
+
+function xgSignInstal(){
+    LOCAL_PATH=$(pwd)
+	if [ -z "$1" ] ;then
+      echo "unsign application is null..."
+	  return
+	fi
+	FILENAME=$1
+	xgSign ${FILENAME}
+	adb install -r ${UNSIGN_FILENAME}
 }
 
 ## for connect device begin
@@ -162,3 +174,14 @@ function setCameraSdkUseTime(){
       echo "time is null"
    fi
 }
+
+function puppyTouch(){
+	if [ "$1" == "stop" ] ;then
+        adb shell am stopservice com.puppy.touchcontrol/.TouchService
+    elif [ "$1" == "start" ] ;then
+        adb shell am startservice com.puppy.touchcontrol/.TouchService
+    else
+        echo "TouchService command is error, please check"
+    fi
+}
+
