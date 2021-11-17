@@ -57,7 +57,6 @@ function uploadGithubcode(){
 	DEFAULT_COMMIT_INFO="upload and backup info ${DATE}"
 	COMMIT_INFO=''
 	if [ -z "$1" ] ;then
-		echo "commit info is null, use Default info: ${DEFAULT_COMMIT_INFO}"
 		COMMIT_INFO=${DEFAULT_COMMIT_INFO}
 	else
 	    COMMIT_INFO=$1
