@@ -7,8 +7,10 @@ alias toProgram='cd /d/program'
 alias toShare='cd /d/workplace/shareWindow'
 alias toMedia='cd /d/workplace/source'
 alias toUICheck='cd /d/tools/uiCheck'
+alias toLogSpace='cd /d/workplace/logSpace'
 alias toSign='cd /d/tools/signapk/sda670-new'
-alias toTools='cd /d/workplace/ShellWork'
+alias toShellSpace='cd /d/workplace/ShellWork'
+alias toTools='cd /d/tools'
 
 
 #XgRobotics: sign apk
