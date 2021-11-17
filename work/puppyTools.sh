@@ -11,7 +11,8 @@ alias toLogSpace='cd /d/workplace/logSpace'
 alias toSign='cd /d/tools/signapk/sda670-new'
 alias toShellSpace='cd /d/workplace/ShellWork'
 alias toTools='cd /d/tools'
-
+alias toDpan='cd /d/'
+alias toKotlin='cd /d/software/kotlinc/bin'
 
 #XgRobotics: sign apk
 function xgSign(){
