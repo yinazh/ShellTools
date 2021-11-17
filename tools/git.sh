@@ -1,11 +1,11 @@
 #!/bin/sh
 
 ## for git tools
-alias gAdda='git add .'
+alias gAddAll='git add .'
 alias gAdd='git add'
-alias gPul='git pull'
-alias gSta='git status .'
-alias gCom='git commit -m'
+alias gPull='git pull'
+alias gStatus='git status .'
+alias gCommit='git commit -m'
 alias gPushMaster='git push -u origin HEAD:refs/for/master'
 alias gPush='git push -u origin'
 alias gLog="git log"
@@ -15,11 +15,25 @@ alias gShow="git show"
 
 
 function uploadCode(){
-   UPLOAD_BRANCH=$1
-   COMMIT_INFO=$2
-   gad;
-   gcm "${COMMIT_INFO}";
-   gp HEAD:refs/for/${1}
+    if [ -z "$1" ] ;then
+      echo "branch info is null, please check"
+	  return
+	fi
+	UPLOAD_BRANCH=$1
+	
+    DATE=`date "+%Y%m%d_%H%M%S"`
+	DEFAULT_COMMIT_INFO='upload and backup info ${DATE}'
+	COMMIT_INFO=''
+	if [ -z "$2" ] ;then
+		echo "commit info is null, use Default info: ${DEFAULT_COMMIT_INFO}"
+		COMMIT_INFO=${DEFAULT_COMMIT_INFO}
+	else
+	    COMMIT_INFO=$2
+	fi
+	
+	gAddAll;
+	gCommit "${COMMIT_INFO}";
+	gPush HEAD:refs/for/${1}
 }
 
 function uploadGidLabCode(){
@@ -32,3 +46,22 @@ function uploadGidLabCode(){
 
 ## for github
 alias gPushMain='git push -u origin main'
+
+function uploadGithubcode(){
+	DATE=`date "+%Y%m%d_%H%M%S"`
+	echo ${DATE}
+	DEFAULT_COMMIT_INFO='upload and backup info ${DATE}'
+	echo ${DEFAULT_COMMIT_INFO}
+	COMMIT_INFO=''
+	echo ${COMMIT_INFO}
+	if [ -z "$2" ] ;then
+		echo "commit info is null, use Default info: ${DEFAULT_COMMIT_INFO}"
+		COMMIT_INFO=${DEFAULT_COMMIT_INFO}
+	else
+	    COMMIT_INFO=$2
+	fi
+	echo ${COMMIT_INFO}
+    gAddAll;
+	gCommit "${COMMIT_INFO}";
+	gPushMain;
+}

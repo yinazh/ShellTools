@@ -13,6 +13,7 @@ alias toShellSpace='cd /d/workplace/ShellWork'
 alias toTools='cd /d/tools'
 alias toDpan='cd /d/'
 alias toKotlin='cd /d/software/kotlinc/bin'
+alias toCode='cd /d/code'
 
 #XgRobotics: sign apk
 function xgSign(){
