@@ -13,6 +13,9 @@ alias gLogS="git log -p"
 alias gLogshow="git log --pretty=oneline"
 alias gShow="git show"
 alias gDiff="git diff"
+alias gBranch='git branch'
+alias gBranchAll='git branch -a'
+alias gRebase='git rebase --hard'
 
 
 function uploadCode(){
