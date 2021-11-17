@@ -12,6 +12,7 @@ alias gLog="git log"
 alias gLogS="git log -p"
 alias gLogshow="git log --pretty=oneline"
 alias gShow="git show"
+alias gDiff="git diff"
 
 
 function uploadCode(){
@@ -36,9 +37,9 @@ function uploadCode(){
 	gPush HEAD:refs/for/${1}
 }
 
-function uploadGidLabCode(){
+function uploadGitLabCode(){
    if [ "$1" ];then
-	   git add .
+	   gAddAll;
 	   COMMIT_INFO=`git commit -m "$1"`
 	   echo $COMMIT_INFO
    fi
