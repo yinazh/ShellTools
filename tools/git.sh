@@ -16,6 +16,7 @@ alias gDiff="git diff"
 alias gBranch='git branch'
 alias gBranchAll='git branch -a'
 alias gRebase='git rebase --hard'
+alias gCheckout='git checkout'
 
 
 function uploadCode(){
