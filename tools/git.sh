@@ -48,19 +48,15 @@ function uploadGidLabCode(){
 alias gPushMain='git push -u origin main'
 
 function uploadGithubcode(){
-	DATE=`date "+%Y%m%d_%H%M%S"`
-	echo ${DATE}
-	DEFAULT_COMMIT_INFO='upload and backup info ${DATE}'
-	echo ${DEFAULT_COMMIT_INFO}
+	DATE=`date "+%Y%m%d"`
+	DEFAULT_COMMIT_INFO="upload and backup info ${DATE}"
 	COMMIT_INFO=''
-	echo ${COMMIT_INFO}
-	if [ -z "$2" ] ;then
+	if [ -z "$1" ] ;then
 		echo "commit info is null, use Default info: ${DEFAULT_COMMIT_INFO}"
 		COMMIT_INFO=${DEFAULT_COMMIT_INFO}
 	else
-	    COMMIT_INFO=$2
+	    COMMIT_INFO=$1
 	fi
-	echo ${COMMIT_INFO}
     gAddAll;
 	gCommit "${COMMIT_INFO}";
 	gPushMain;
