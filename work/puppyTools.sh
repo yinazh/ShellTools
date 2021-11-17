@@ -1,8 +1,17 @@
 #!/bin/sh
 
+
+## for Windows 工作目录
+alias toWorkplace='cd /d/workplace'
+alias toProgram='cd /d/program'
+alias toShare='cd /d/workplace/shareWindow'
+alias toMedia='cd /d/workplace/source'
+alias toUICheck='cd /d/tools/uiCheck'
+alias toSign='cd /d/tools/signapk/sda670-new'
+alias toTools='cd /d/workplace/ShellWork'
+
+
 #XgRobotics: sign apk
-## for Ubuntu
-## @unuse
 function xgSign(){
   LOCAL_PATH=$(pwd)
   UNSIGN_FILENAME=$1
@@ -184,4 +193,3 @@ function puppyTouch(){
         echo "TouchService command is error, please check"
     fi
 }
-

@@ -6,7 +6,7 @@ alias aupgrade='sudo apt upgrade'
 alias aclean='sudo apt autoclean'
 alias aremove='sudo apt autoremove'
 alias ainstall='sudo apt install'
-alias sr='sudo reboot'
+alias srebot='sudo reboot'
 
 ## for ubuntu logcat
 function pidcat(){

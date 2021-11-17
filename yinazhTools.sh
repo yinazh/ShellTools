@@ -6,8 +6,6 @@ export TOOLS_PATH=$(pwd)
 source ${TOOLS_PATH}/tools/adb.sh
 source ${TOOLS_PATH}/tools/fastboot.sh
 source ${TOOLS_PATH}/tools/git.sh
-
 source ${TOOLS_PATH}/ubuntu/apt.sh
-
 source ${TOOLS_PATH}/work/puppyTools.sh
-
+source ${TOOLS_PATH}/windows/windowsTools.sh
