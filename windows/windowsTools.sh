@@ -12,4 +12,5 @@ alias openSignDir='start /d/tools/signapk/sda670-new'
 alias openDpan='start /d/'
 alias openProgram='start /d/program'
 alias openDownload='start /c/Users/yinazh/Downloads'
+alias openWorkplace='start /d/workplace'
 
