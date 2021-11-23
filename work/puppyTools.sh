@@ -75,12 +75,16 @@ function connectM1(){
       adb root;
   fi
   
-  remount=`adb remount`
-  if [ "$remount" != "remount succeeded" ];then
-	  sleep 1;
-      adb remount;
-  fi
-  echo "connect device success!"
+  while (true)
+  do
+	  remount=`adb remount`
+	  if [ "$remount" != "remount succeeded" ];then
+		  sleep 1;
+	  else 
+		  echo "connect device success!"
+		  break;
+	  fi
+  done
 }
 
 function connectIP(){
