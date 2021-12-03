@@ -19,6 +19,7 @@ alias adisconn='adb disconnect'
 
 alias ainstal='adb install '
 alias ainstar='adb install -r'
+alias ainstat='adb install -t'
 alias auinstal='adb uninstall'
 ## -k 保留应用配置和缓存文件
 alias auninstak='adb uninstall -k'

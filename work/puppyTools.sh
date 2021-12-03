@@ -51,7 +51,7 @@ function xgSignInstal(){
 	fi
 	FILENAME=$1
 	xgSign ${FILENAME}
-	adb install -r ${UNSIGN_FILENAME}
+	adb install -r ${FILENAME}
 }
 
 ## for connect device begin
