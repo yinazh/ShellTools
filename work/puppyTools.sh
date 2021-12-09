@@ -129,7 +129,6 @@ function flashSystemUIWithRecentsRebot(){
 	apush SystemUIWithLegacyRecents.apk system/product/priv-app/SystemUIWithLegacyRecents/;
 	apush oat/arm64/SystemUIWithLegacyRecents.odex system/product/priv-app/SystemUIWithLegacyRecents/oat/arm64/;
 	apush oat/arm64/SystemUIWithLegacyRecents.vdex system/product/priv-app/SystemUIWithLegacyRecents/oat/arm64/;
-	apush SystemUIWithLegacyRecents.apk system/product/priv-app/SystemUIWithLegacyRecents/;
 	acls com.android.systemui;
 	sleep 1;
 	arebot;

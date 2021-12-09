@@ -158,6 +158,7 @@ alias aCpuInfo='adb shell cat /proc/cpuinfo'
 alias aModel='adb shell getprop ro.product.model'  #设备型号
 alias aMAC='adb shell cat sys/class/net/wlan0/address'  #读取mac地址
 alias aWmSize='adb shell wm size' #查看屏幕分辨率
+alias aWmSizeReset='adb shell wm size reset'
 alias aDensity='adb shell wm density' #查看屏幕密度
 alias aDeviceId='adb get-serialno'
 
