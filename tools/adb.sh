@@ -212,4 +212,18 @@ function aMonkeyPkg100(){
     fi
 }
 
+### 获取屏幕控件
+#from：https://www.cnblogs.com/heyuling/p/13032123.html
+alias aUIDump='adb shell uiautomator dump sdcard/screen.uix'
+alias aScreenCap='adb shell screencap -p sdcard/screen.png'
+alias startUiAutomatorViewer='start /c/Users/yinazh/AppData/Local/Android/Sdk/tools/bin/uiautomatorviewer.bat'
 
+function startUiAutomator(){
+    LOCAL_PATH=$(pwd)
+	echo ${LOCAL_PATH}
+	aUIDump;
+	apul sdcard/screen.uix ${LOCAL_PATH}/
+	aScreenCap;
+	apul sdcard/screen.png ${LOCAL_PATH}/
+	startUiAutomatorViewer;
+}

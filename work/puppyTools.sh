@@ -138,9 +138,8 @@ function flashSystemUIWithRecents(){
     connectM1;
 	sleep 1;
 	apush SystemUIWithLegacyRecents.apk system/product/priv-app/SystemUIWithLegacyRecents/;
-	apush oat/arm64/SystemUIWithLegacyRecents.odex system/product/priv-app/SystemUIWithLegacyRecents/oat/arm64/;
-	apush oat/arm64/SystemUIWithLegacyRecents.vdex system/product/priv-app/SystemUIWithLegacyRecents/oat/arm64/;
 	acls com.android.systemui;
+        arebot;
 }
 
 function flashK1Settigs(){
