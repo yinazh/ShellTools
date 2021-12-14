@@ -217,6 +217,7 @@ function aMonkeyPkg100(){
 alias aUIDump='adb shell uiautomator dump sdcard/screen.uix'
 alias aScreenCap='adb shell screencap -p sdcard/screen.png'
 alias startUiAutomatorViewer='start /c/Users/yinazh/AppData/Local/Android/Sdk/tools/bin/uiautomatorviewer.bat'
+alias startScreen='java -jar /d/software/androidscreencast-0.0.12s-executable.jar'
 
 function startUiAutomator(){
     LOCAL_PATH=$(pwd)
@@ -227,3 +228,4 @@ function startUiAutomator(){
 	apul sdcard/screen.png ${LOCAL_PATH}/
 	startUiAutomatorViewer;
 }
+
