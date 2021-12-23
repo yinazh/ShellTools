@@ -199,3 +199,7 @@ function puppyTouch(){
         echo "TouchService command is error, please check"
     fi
 }
+
+alias puppyAutoFocus='adb shell input keyevent 1000'
+
+
