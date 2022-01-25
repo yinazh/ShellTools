@@ -161,6 +161,15 @@ alias aWmSize='adb shell wm size' #查看屏幕分辨率
 alias aWmSizeReset='adb shell wm size reset'
 alias aDensity='adb shell wm density' #查看屏幕密度
 alias aDeviceId='adb get-serialno'
+##获取屏幕显示信息
+alias aWindow='adb shell dumpsys window displays'
+##查看SurfaceFlinger
+alias aSufaceFlinger='adb shell dumpsys SurfaceFlinger'
+##测试性能，后面加包名
+alias agfxinfo='adb shell dumpsys gfxinfo ' 
+
+
+
 
 alias aSystem='adb shell settings list system'
 alias aGlobal='adb shell settings list global'

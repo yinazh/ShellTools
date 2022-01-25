@@ -166,7 +166,7 @@ function setBetaWorkforCameraSDK(){
 	echo "CameraSDK Beta Environment Success!"
 }
 
-function openKidsDebug(){
+function startKidsDebug(){
     connectM1;
 	result=`aReadProp persist.sys.debug.kids`
 	echo "read Kids Debug ：$result"
