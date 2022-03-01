@@ -14,6 +14,7 @@ alias fastLock='fastboot.exe flashing lock'
 
 alias fastFlashSystem='fastboot.exe flash system system.img'
 alias fastFlashBoot='fastboot.exe flash boot boot.img'
+alias fastFlashSuper='fastboot.exe flash super super.img'
 
 alias fastFormatData='fastboot.exe format data'
 alias fastEraseBoot='fastboot.exe erase boot'
