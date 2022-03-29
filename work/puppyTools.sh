@@ -69,17 +69,30 @@ function connectC1(){
 }
 
 function connectM1(){
+
   rootinfo=`adb root`
-  if [ "$rootinfo" != "adbd is already running as root" ];then
-	  sleep 1;
+  alreadyRoot="adbd is already running as root"
+  noPermission="Permission denied"
+ 
+  if [ "$rootinfo" != "${alreadyRoot}" ];then
       adb root;
+	  wait
   fi
   
   while (true)
   do
 	  remount=`adb remount`
+	  wait
+	  
 	  if [ "$remount" != "remount succeeded" ];then
-		  sleep 1;
+	  	result=$(echo $remount | grep "${noPermission}")
+	    if [[ "$result" != "" ]];then
+		   adb disable-verity;
+		   wait
+		   adb reboot;
+		fi
+	      
+	    echo $remount
 	  else 
 		  echo "connect device success!"
 		  break;
@@ -92,7 +105,7 @@ function connectIP(){
      echo "connect $1"
      adb connect $1
   else
-     echo "clear no application"
+     echo "IP address is null"
   fi
 }
 ## for connect device end
