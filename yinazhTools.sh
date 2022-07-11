@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo $(pwd)
+#echo $(pwd)
 
 export TOOLS_PATH=$(pwd)
 
