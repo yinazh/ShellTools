@@ -1,7 +1,8 @@
 #!/bin/sh
 
-##export TOOLS_PATH=$(pwd)
-export TOOLS_PATH=/d/workplace/ShellWork
+echo $(pwd)
+
+export TOOLS_PATH=$(pwd)
 
 ## source all tools shell tools
 source ${TOOLS_PATH}/tools/adb.sh
