@@ -19,17 +19,17 @@ alias openWorkplace='start /d/workspace'
 
 ## for Windows 工作目录
 alias toWorkplace='cd /d/workspace/'
-#alias toProgram='cd /d/program'
+alias toProgram='cd /d/workspace/program'
 #alias toShare='cd /d/workspace/shareWindow'
 #alias toMedia='cd /d/workspace/source'
 alias toUICheck='cd /d/tools/uiCheck'
-#alias toLogSpace='cd /d/workspace/logSpace'
+alias toLogSpace='cd /d/workspace/logSpace'
 #alias toSign='cd /d/tools/signapk/sda670-new'
 alias toShellSpace='cd /d/workspace/code/ShellTools'
 #alias toTools='cd /d/tools'
 alias toDpan='cd /d/'
 #alias toKotlin='cd /d/software/kotlinc/bin'
-#alias toCode='cd /d/code'
+alias toCode='cd /d/workspace/code'
 
 
 ## windows下开发软件列表

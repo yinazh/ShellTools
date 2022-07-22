@@ -53,7 +53,7 @@ function connectC1(){
   adb remount;
 }
 
-function connectM1(){
+function connectDev(){
 
   rootinfo=`adb root`
   alreadyRoot="adbd is already running as root"

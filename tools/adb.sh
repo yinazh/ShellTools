@@ -20,11 +20,18 @@ alias adisconn='adb disconnect'
 alias ainstal='adb install '
 alias ainstar='adb install -r'
 alias ainstat='adb install -t'
+alias ainstas='adb install -s'
+alias ainstad='adb install -d'
+alias ainstag='adb install -g'
+alias ainstat='adb install -t'
 alias auinstal='adb uninstall'
 ## -k 保留应用配置和缓存文件
-alias auninstak='adb uninstall -k'
+alias auinstak='adb uninstall -k'
 
 alias aShutDown='adb shell reboot -p'
+
+## -W 显示应用启动耗时
+alias astartW="adb shell am start -W "
 
 ### 模拟操作
 alias apul='adb pull'
@@ -41,6 +48,8 @@ function aKeyDown() {
 		echo "KeyDown value is null"
 	fi
 }
+
+alias keyBack='adb shell input keyevent 4'
 
 function broadcastAction(){
    if [ "$1" ];then
@@ -75,6 +84,9 @@ function clearApp(){
 alias alogt='adb logcat -v time'
 alias alogc='adb logcat -c'
 alias alruntime='adb logcat -s AndroidRuntime'
+alias alogw="adb logcat "\*:W""
+alias aloge="adb logcat "\*:E""
+
 
 function alogcat(){
   DATE=`date "+%Y%m%d_%H%M%S"`
@@ -169,8 +181,6 @@ alias aSufaceFlinger='adb shell dumpsys SurfaceFlinger'
 alias agfxinfo='adb shell dumpsys gfxinfo ' 
 
 
-
-
 alias aSystem='adb shell settings list system'
 alias aGlobal='adb shell settings list global'
 alias aSecure='adb shell settings list secure'
@@ -238,3 +248,5 @@ function startUiAutomator(){
 	startUiAutomatorViewer;
 }
 
+### 打开原生应用
+alias startSettings='adb shell am start com.android.settings'
