@@ -17,7 +17,7 @@ alias gBranch='git branch'
 alias gBranchAll='git branch -a'
 alias gRebase='git rebase --hard'
 alias gCheckout='git checkout'
-
+alias gSubUpdate='git submodule update'
 
 function uploadCode(){
     if [ -z "$1" ] ;then

@@ -9,6 +9,7 @@ export TOOLS_PATH="${CMDER_ROOT}/../../workspace/code/ShellTools"
 ## source all tools shell tools
 source ${TOOLS_PATH}/tools/adb.sh
 source ${TOOLS_PATH}/tools/fastboot.sh
+source ${TOOLS_PATH}/tools/java.sh
 source ${TOOLS_PATH}/tools/git.sh
 source ${TOOLS_PATH}/ubuntu/apt.sh
 source ${TOOLS_PATH}/work/puppyTools.sh
