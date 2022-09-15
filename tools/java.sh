@@ -7,7 +7,7 @@
 
 function sharkApk(){
 	if [ "$1" ];then
-       java -jar /d/workspace/code/ShellTools/tools/ClassyShark.jar -open $1
+       java -jar /d/workspace/code/ShellTools/source/ClassyShark.jar -open $1
     else
        echo "apk is null"
     fi

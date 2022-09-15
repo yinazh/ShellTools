@@ -49,7 +49,20 @@ function aKeyDown() {
 	fi
 }
 
+function whileKeyDown(){
+  if [ "$1" ];then
+    while (true)
+    do
+       adb shell input keyevent $1;
+       sleep 0.01;
+    done
+  else
+     echo "KeyDown value is null"
+  fi
+}
+
 alias keyBack='adb shell input keyevent 4'
+alias keyScreenCap='adb shell imput keyevent 120'
 
 function broadcastAction(){
    if [ "$1" ];then

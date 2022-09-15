@@ -4,7 +4,7 @@
 
 ## cmder的路径有问题，需要根据CMDER_ROOT的绝对路径来处理
 #export TOOLS_PATH=$(pwd)
-export TOOLS_PATH="${CMDER_ROOT}/../../workspace/code/ShellTools"
+export TOOLS_PATH="${CMDER_ROOT}/../../code/ShellTools"
 
 ## source all tools shell tools
 source ${TOOLS_PATH}/tools/adb.sh
