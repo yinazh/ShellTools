@@ -1,29 +1,22 @@
 #!/bin/sh
 
 ### 15.6寸屏，86屏，12.3寸屏应用控制
-alias startFalconLaunchr='adb shell am start com.ea.aiot.falconlauncher/com.ea.aiot.falconlauncher.activity.MainActivity'
-alias removeFalconLauncher="adb uninstall com.ea.aiot.falconlauncher"
+alias startFa='adb shell am start com.ea.aiot.falconlauncher/com.ea.aiot.falconlauncher.activity.MainActivity'
+alias removeFa="adb uninstall com.ea.aiot.falconlauncher"
 alias startFalconTalk='adb shell am start com.ea.aiot.falconlauncher/com.dnake.talk.MainActivity'
 
-alias start86Launchr='adb shell am start com.ea.aiot.hawklauncher/com.ea.aiot.hawklauncher.MainActivity'
-alias startEagleLauncher='adb shell am start com.ea.aiot.eaglelauncher/.MainActivity'
+alias startHaw='adb shell am start com.ea.aiot.hawklauncher/com.ea.aiot.hawklauncher.MainActivity'
+alias startEa='adb shell am start com.ea.aiot.eaglelauncher/.MainActivity'
 
-function connect80(){
-  if [ "$1" ];then
-     echo "connect $1"
-     adb connect 192.168.80.$1
-  else
-     echo "IP address is null"
-  fi
-}
+alias clearea='adb shell pm clear com.ea.aiot.eaglelauncher'
+alias removeEa="adb uninstall com.ea.aiot.eaglelauncher"
 
-function connect70(){
-  if [ "$1" ];then
-     echo "connect $1"
-     adb connect 192.168.70.$1
-  else
-     echo "IP address is null"
-  fi
+function rebootConfig(){
+   if [ "$1" ];then
+      adb shell am broadcast -a com.ea.aiot.falconlauncher.reboot_action --ei action $1;
+   else
+      echo "args is null"
+   fi
 }
 
 

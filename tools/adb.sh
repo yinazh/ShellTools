@@ -145,6 +145,7 @@ alias aTop10='adb shell top -s 10' #查看占用内存前10 的app
 alias adumps='adb shell dumpsys activity'
 alias adumActivity='adb shell dumpsys activity activities | grep mFocusedActivity'
 alias aMeminfo='adb shell dumpsys meminfo' #内存使用情况Memory Usage
+alias aSList='adb shell service list'
 
 function adumpsPkg(){
 	if [ "$1" ];then

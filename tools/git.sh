@@ -19,6 +19,10 @@ alias gRebase='git rebase --hard'
 alias gCheckout='git checkout'
 alias gSubUpdate='git submodule update'
 
+alias gHardPre="git reset HEAD^"
+alias gReHard='git reset --hard '
+alias gResetMaste='git reset –hard origin/master'
+
 function uploadCode(){
     if [ -z "$1" ] ;then
       echo "branch info is null, please check"
