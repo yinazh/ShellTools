@@ -99,6 +99,7 @@ alias alogc='adb logcat -c'
 alias alruntime='adb logcat -s AndroidRuntime'
 alias alogw="adb logcat "\*:W""
 alias aloge="adb logcat "\*:E""
+alias abug='adb bugreport'
 
 
 function alogcat(){
