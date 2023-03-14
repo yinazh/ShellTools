@@ -11,6 +11,9 @@ alias startEa='adb shell am start com.ea.aiot.eaglelauncher/.MainActivity'
 alias clearea='adb shell pm clear com.ea.aiot.eaglelauncher'
 alias removeEa="adb uninstall com.ea.aiot.eaglelauncher"
 
+alias clearFa='adb shell pm clear com.ea.aiot.falconlauncher'
+alias removeFa="adb uninstall com.ea.aiot.falconlauncher"
+
 function rebootConfig(){
    if [ "$1" ];then
       adb shell am broadcast -a com.ea.aiot.falconlauncher.reboot_action --ei action $1;
@@ -18,6 +21,8 @@ function rebootConfig(){
       echo "args is null"
    fi
 }
+
+
 
 
 
