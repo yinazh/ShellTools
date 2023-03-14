@@ -21,7 +21,7 @@ alias gSubUpdate='git submodule update'
 
 alias gHardPre="git reset HEAD^"
 alias gReHard='git reset --hard '
-alias gResetMaste='git reset –hard origin/master'
+alias gResetMaster='git reset –hard origin/master'
 
 function uploadCode(){
     if [ -z "$1" ] ;then
