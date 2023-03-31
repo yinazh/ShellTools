@@ -11,8 +11,8 @@ alias srebot='sudo reboot'
 ## for ubuntu logcat
 function pidcat(){
    if [ "$1" ];then
-      python /home/yinazh/Android/Sdk/tools/pidcat.py $1
+      python /d/code/ShellTools/tools/pidcat.py $1
    else
-      python /home/yinazh/Android/Sdk/tools/pidcat.py
+      python /d/code/ShellTools/tools/pidcat.py
    fi
 }
