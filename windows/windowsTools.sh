@@ -3,6 +3,7 @@
 ## start Software
 alias startScrcpy='start /d/software/scrcpy-win64-v1.24/scrcpy.exe'
 #alias startMonitor='start /d/software/TrafficMonitor_V1.83_x64/TrafficMonitor/TrafficMonitor.exe'
+alias startQtScrcpy='start /d/software/QtScrcpy-win-x64-v2.1.2/QtScrcpy-win-x64-v2.1.2/QtScrcpy.exe'
 
 ## open dir
 alias openAndroidSdkDir='start /c/Users/Administrator/AppData/Local/Android/Sdk'
