@@ -182,6 +182,8 @@ alias aReadProp='adb shell getprop '
 alias aWriteProp='adb shell setprop '
 alias aBattery='adb shell dumpsys battery'
 alias aCpuInfo='adb shell cat /proc/cpuinfo'
+alias aCpuInfoM='adb shell dumpsys cpuinfo'
+alias aMemoryInfo='adb shell dumpsys meminfo'
 alias aModel='adb shell getprop ro.product.model'  #设备型号
 alias aMAC='adb shell cat sys/class/net/wlan0/address'  #读取mac地址
 alias aWmSize='adb shell wm size' #查看屏幕分辨率
@@ -194,7 +196,6 @@ alias aWindow='adb shell dumpsys window displays'
 alias aSufaceFlinger='adb shell dumpsys SurfaceFlinger'
 ##测试性能，后面加包名
 alias agfxinfo='adb shell dumpsys gfxinfo ' 
-
 
 alias aSystem='adb shell settings list system'
 alias aGlobal='adb shell settings list global'
@@ -224,7 +225,7 @@ alias aListSystemPackages='adb shell pm list packages -s' #列出系统应用的
 alias aListThirdPackages='adb shell pm list packages -3'  #列出除了系统应用的第三方应用包名
 alias aListPackage='adb shell am monitor'
 
-### 调试应用：
+### 焦点
 alias aFindFocus='adb shell dumpsys window | findstr mCurrentFocus'
 
 ### 录屏/截屏
@@ -261,6 +262,13 @@ function startUiAutomator(){
 	aScreenCap;
 	apul sdcard/screen.png ${LOCAL_PATH}/
 	startUiAutomatorViewer;
+}
+
+function screenCapFile(){
+    LOCAL_PATH=$(pwd)
+	echo ${LOCAL_PATH}
+	aScreenCap;
+	apul sdcard/screen.png ${LOCAL_PATH}/
 }
 
 ### 打开原生应用

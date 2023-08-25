@@ -25,12 +25,11 @@ alias toShare='cd /d/workspace/ShareApk'
 #alias toMedia='cd /d/workspace/source'
 #alias toUICheck='cd /d/tools/uiCheck'
 alias toLogSpace='cd /d/workspace/logspace'
-#alias toSign='cd /d/tools/signapk/sda670-new'
 alias toShellSpace='cd /d/code/ShellTools'
 #alias toTools='cd /d/tools'
 alias toDpan='cd /d/'
 #alias toKotlin='cd /d/software/kotlinc/bin'
-alias toCode='cd /d/workspace/code'
+alias toCode='cd /d/code'
 
 
 ## windows下开发软件列表

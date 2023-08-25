@@ -52,12 +52,39 @@ function eaToBranch(){
    fi
 }
 
+alias startProgram='start /d/workspace/program'
+alias startLog='start /d/workspace/logspace'
+alias startSoft='star /d/software'
+
 alias eaToMaster='eaToBranch master'
 alias eaToVoice='eaToBranch eaglelauncher_voice'
 
+alias to156Space='cd /d/workspace/program/15.6'
+alias start156Space='start /d/workspace/program/15.6'
+alias to156ReleaseSpace='cd /d/workspace/program/15.6/release发版备份--提供给狄耐克'
+alias start156ReleaseSpace='start /d/workspace/program/15.6/release发版备份--提供给狄耐克'
+
+alias to86Space='cd /d/workspace/program/8.6'
+alias start86Space='start /d/workspace/program/8.6'
+alias to86ReleaseSpace='cd /d/workspace/program/8.6/release'
+alias start86ReleaseSpace='start /d/workspace/program/8.6/release'
+
+alias to123Space='cd /d/workspace/program/12.3'
+alias start123Space='start /d/workspace/program/12.3'
+alias to123ReleaseSpace='cd /d/workspace/program/12.3/release'
+alias start123ReleaseSpace='start /d/workspace/program/12.3/release'
 
 
+alias to10Space='cd /d/workspace/program/10'
+alias start10Space='start /d/workspace/program/10'
+alias to10ReleaseSpace='cd /d/workspace/program/10/release'
+alias start10ReleaseSpace='start /d/workspace/program/10/release'
 
+alias toIotSpace='cd /d/workspace/program/iotcontroller库'
+alias startIotSpace='start /d/workspace/program/iotcontroller库'
+
+alias toDevConSpace='cd /d/workspace/program/设备入网需要的配置文件'
+alias startDevConSpace='start /d/workspace/program/设备入网需要的配置文件'
 
 
 
