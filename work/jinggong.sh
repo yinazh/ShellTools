@@ -54,7 +54,7 @@ function eaToBranch(){
 
 alias startProgram='start /d/workspace/program'
 alias startLog='start /d/workspace/logspace'
-alias startSoft='star /d/software'
+alias startSoft='start /d/software'
 
 alias eaToMaster='eaToBranch master'
 alias eaToVoice='eaToBranch eaglelauncher_voice'
@@ -80,12 +80,15 @@ alias start10Space='start /d/workspace/program/10'
 alias to10ReleaseSpace='cd /d/workspace/program/10/release'
 alias start10ReleaseSpace='start /d/workspace/program/10/release'
 
-alias toIotSpace='cd /d/workspace/program/iotcontroller库'
-alias startIotSpace='start /d/workspace/program/iotcontroller库'
+alias toIotSpace='cd /d/workspace/program/iotcontroller'
+alias startIotSpace='start /d/workspace/program/iotcontroller'
 
 alias toDevConSpace='cd /d/workspace/program/设备入网需要的配置文件'
 alias startDevConSpace='start /d/workspace/program/设备入网需要的配置文件'
 
+##alias start700Dir='start /d/workspace/program/700远程升级工具'
+alias start700Tool='start /d/workspace/program/700远程升级工具/700升级工具.exe'
 
+alias startPortTool='start /d/software/serialportutilitylatest-v3.8.5/SerialPortUtility/SerialPortUtility.exe'
 
 
