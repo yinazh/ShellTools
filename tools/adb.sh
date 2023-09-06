@@ -2,6 +2,8 @@
 
 ## for adb tools
 
+export SHELL_DIR="${CMDER_ROOT}/../../code/ShellTools/"
+
 ### adb服务指令
 alias aStartSev='adb start-server'
 alias aKillSev='adb kill-server'
@@ -100,7 +102,7 @@ alias alruntime='adb logcat -s AndroidRuntime'
 alias alogw="adb logcat "\*:W""
 alias aloge="adb logcat "\*:E""
 alias abug='adb bugreport'
-
+alias pidcat='python ${SHELL_DIR}/tools/pidcat.py'
 
 function alogcat(){
   DATE=`date "+%Y%m%d_%H%M%S"`
@@ -275,3 +277,6 @@ function screenCapFile(){
 
 ### 打开原生应用
 alias startSettings='adb shell am start com.android.settings'
+
+
+alias systrace='python /d/software/platform-tools_33/systrace/systrace.py'
