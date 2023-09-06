@@ -7,26 +7,25 @@ alias startQtScrcpy='start /d/software/QtScrcpy-win-x64-v2.1.2/QtScrcpy-win-x64-
 
 ## open dir
 alias openAndroidSdkDir='start /c/Users/Administrator/AppData/Local/Android/Sdk'
+alias toAndroidSDk='cd /c/Users/Administrator/Appdata/Local/Android/Sdk'
 #alias openSSHDir='start /c/Users/Administrator/ssh'
 #alias openSignDir='start /d/tools/signapk/sda670-new'
 
-alias openDpan='start /d/'
-alias openProgram='start /d/workspace/program'
-alias openDownload='start /c/Users/Administrator/Downloads'
-alias openWorkplace='start /d/workspace'
+alias startDpan='start /d/'
+alias startProgram='start /d/workspace/program'
+alias startDownload='start /c/Users/Administrator/Downloads'
+alias startWorkplace='start /d/workspace'
 
 
 
 
 ## for Windows 工作目录
 alias toWorkplace='cd /d/workspace/'
+alias toDownload='cd /c/Users/Administrator/Downloads'
 alias toProgram='cd /d/workspace/program'
 alias toShare='cd /d/workspace/ShareApk'
-#alias toMedia='cd /d/workspace/source'
-#alias toUICheck='cd /d/tools/uiCheck'
 alias toLogSpace='cd /d/workspace/logspace'
 alias toShellSpace='cd /d/code/ShellTools'
-#alias toTools='cd /d/tools'
 alias toDpan='cd /d/'
 #alias toKotlin='cd /d/software/kotlinc/bin'
 alias toCode='cd /d/code'

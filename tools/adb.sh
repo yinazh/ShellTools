@@ -3,8 +3,8 @@
 ## for adb tools
 
 ### adb服务指令
-alias aStartServ='adb start-server'
-alias aKillServ='adb kill-server'
+alias aStartSev='adb start-server'
+alias aKillSev='adb kill-server'
 
 
 ### 操作指令
@@ -144,9 +144,9 @@ function alogcat(){
 alias aTop='adb shell top'
 alias aTop10='adb shell top -s 10' #查看占用内存前10 的app
 alias adumps='adb shell dumpsys activity'
-alias adumActivity='adb shell dumpsys activity activities | grep mFocusedActivity'
+alias adumAcy='adb shell dumpsys activity activities | grep mFocusedActivity'
 alias aMeminfo='adb shell dumpsys meminfo' #内存使用情况Memory Usage
-alias aSList='adb shell service list'
+alias aSevList='adb shell service list'
 
 function adumpsPkg(){
 	if [ "$1" ];then
@@ -209,7 +209,7 @@ alias aPutSecure='adb shell settings put secure'
 
 
 #####获取系统版本号
-function afindPkgVersion(){
+function afindPkgVsion(){
 	if [ "$1" ];then
        echo "finding ..."
        adb shell dumpsys package $1 | findstr version
@@ -220,10 +220,12 @@ function afindPkgVersion(){
 
 
 ### 读取系统内容
-alias aListPackages='adb shell pm list packages'
-alias aListSystemPackages='adb shell pm list packages -s' #列出系统应用的所有包名
-alias aListThirdPackages='adb shell pm list packages -3'  #列出除了系统应用的第三方应用包名
-alias aListPackage='adb shell am monitor'
+alias aListPkgs='adb shell pm list packages'
+alias aListSysPkgs='adb shell pm list packages -s' #列出系统应用的所有包名
+alias aList3Pkgs='adb shell pm list packages -3'  #列出除了系统应用的第三方应用包名
+alias aListPkg='adb shell am monitor' #持续监控app的报名
+alias aListPkgFrom='adb shell pm list packages -i' #显示包的安装来源
+alias alistPkgAs='adb shell pm list pakcages -f' #显示包及关联的文件
 
 ### 焦点
 alias aFindFocus='adb shell dumpsys window | findstr mCurrentFocus'
