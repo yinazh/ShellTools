@@ -2,7 +2,7 @@
 
 ## for adb tools
 
-export SHELL_DIR="${CMDER_ROOT}/../../code/ShellTools/"
+export SHELL_DIR="${CMDER_ROOT}/../../code/ShellTools"
 
 ### adb服务指令
 alias aStartSev='adb start-server'
@@ -65,6 +65,7 @@ function whileKeyDown(){
 
 alias keyBack='adb shell input keyevent 4'
 alias keyScreenCap='adb shell input keyevent 120'
+alias keyScreenOnOff='adb shell input keyevent 26'
 
 function broadcastAction(){
    if [ "$1" ];then
