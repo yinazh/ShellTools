@@ -109,7 +109,7 @@ function alogcat(){
   DATE=`date "+%Y%m%d_%H%M%S"`
   #echo ${DATE}
   LOCAL_PATH=$(pwd)
-  echo $LOCAL_PATH
+  #echo $LOCAL_PATH
   adb logcat -c ;
   echo "start catch log"
   echo "**************************************"
@@ -150,6 +150,18 @@ alias adumps='adb shell dumpsys activity'
 alias adumAcy='adb shell dumpsys activity activities | grep mFocusedActivity'
 alias aMeminfo='adb shell dumpsys meminfo' #内存使用情况Memory Usage
 alias aSevList='adb shell service list'
+
+
+function adumpHeap(){
+    if [ "$1" ];then
+	    echo "dump pkg heap ..."
+	    adb shell am dumpheap $1 data/local/tmp/$1.hprof
+	    adb pull data/local/tmp/$1.hprof ${LOCAL_PATH}
+    else
+	    echo "application pkgName is null, please check"
+    fi
+
+}
 
 function adumpsPkg(){
 	if [ "$1" ];then
