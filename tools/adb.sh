@@ -11,9 +11,9 @@ alias aKillSev='adb kill-server'
 
 ### 操作指令
 alias ashl='adb shell'
-alias aroot='adb root'
-alias arebot='adb reboot'
-alias aremot='adb remount'
+alias arot='adb root'
+alias arbot='adb reboot'
+alias amont='adb remount'
 alias adev='adb devices'
 
 alias aconn='adb connect'
@@ -41,9 +41,9 @@ alias apush='adb push'
 alias astart='adb shell am start'
 alias abroad='adb shell am broadcast -a'
 alias acls='adb shell pm clear'
-alias aForceStop='adb shell am force-stop' #强制停止应用
+alias aStop='adb shell am force-stop' #强制停止应用
 
-function aKeyDown() {
+function keyDown() {
 	if [ "$1" ];then
 		adb shell input keyevent $1;
 	else
@@ -64,8 +64,25 @@ function whileKeyDown(){
 }
 
 alias keyBack='adb shell input keyevent 4'
+alias keyHome='adb shell input keyevent 3'
+alias keyVol+='adb shell input keyevent 24'
+alias keyVol-='adb shell input keyevent 25'
+alias keyPower='adb shell input keyevent 26'
+alias keyMute='adb shell input keyevent 164'
 alias keyScreenCap='adb shell input keyevent 120'
-alias keyScreenOnOff='adb shell input keyevent 26'
+alias keyScreenOn='adb shell input keyevent 224'
+alias keyScreenOff='adb shell input keyevent 223'
+alias keyBright+="adb shell input keyevent 221"
+alias keyBright-="adb shell input keyevent 220"
+alias keyInput='adb shell input text'
+
+
+alias broadcastBootCompleted="adb shell am broadcast -a android.intent.action.BOOT_COMPLETED"
+alias broadcastBootCompletedPkg="adb shell am broadcast -a android.intent.action.BOOT_COMPLETED -n "
+alias broadcastScreenOn="adb shell am broadcast -a android.intent.action.SCREEN_ON"
+alias broadcastScreenOnPkg="adb shell am broadcast -a android.intent.action.SCREEN_ON -n "
+alias broadcastScreenOff="adb shell am broadcast -a android.intent.action.SCREEN_OFF"
+alias broadcastScreenOffPkg="adb shell am broadcast -a android.intent.action.SCREEN_OFF -n "
 
 function broadcastAction(){
    if [ "$1" ];then
@@ -183,6 +200,8 @@ function adumpPkgFile(){
 	fi
 }
 
+alias systrace='python /d/software/platform-tools_33/systrace/systrace.py'
+
 
 ### 模式权限相关
 alias aSideLoad='adb sideload'
@@ -204,9 +223,19 @@ alias aMAC='adb shell cat sys/class/net/wlan0/address'  #读取mac地址
 alias aWmSize='adb shell wm size' #查看屏幕分辨率
 alias aWmSizeReset='adb shell wm size reset'
 alias aDensity='adb shell wm density' #查看屏幕密度
+alias aDensityReset='adb shell wm density reest'
 alias aDeviceId='adb get-serialno'
+alias aIpWlan='adb shell ifconfig wlan0'
+alias aIpEth='adb shell ifconfig eth0'
 ##获取屏幕显示信息
 alias aWindow='adb shell dumpsys window displays'
+alias aAndroidVersion='adb shell getprop ro.build.version.release'
+alias aSdk='adb shell getprop ro.build.version.sdk'
+alias aBuildProp='adb shell cat system/build.prop'
+alias aCpuSupl='adb shell getprop ro.product.cpu.abilist'
+alias aDvkHeapSize='adb shell getprop dalvik.vm.heapsize'
+
+
 ##查看SurfaceFlinger
 alias aSufaceFlinger='adb shell dumpsys SurfaceFlinger'
 ##测试性能，后面加包名
@@ -291,5 +320,8 @@ function screenCapFile(){
 ### 打开原生应用
 alias startSettings='adb shell am start com.android.settings'
 
+alias closeAdb='adb shell settings put global adb_enabled 0'
+alias openWifi='adb shell svc wifi enable'
+alias closeWifi='adb shell svc wifi disable'
 
-alias systrace='python /d/software/platform-tools_33/systrace/systrace.py'
+
