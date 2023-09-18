@@ -91,4 +91,11 @@ alias start700Tool='start /d/workspace/program/700远程升级工具/700升级�
 
 alias startPortTool='start /d/software/serialportutilitylatest-v3.8.5/SerialPortUtility/SerialPortUtility.exe'
 
+alias eagleV='adb shell dumpsys package com.ea.aiot.eaglelauncher | findstr version'
+alias falV='adb shell dumpsys package com.ea.aiot.falconlauncher | findstr version'
+alias hawkV='adb shell dumpsys package com.ea.aiot.hawklauncher | findstr version'
+alias microV='adb shell dumpsys package com.ea.aiot.microraptorlauncher | findstr version'
 
+alias clsEa='adb shell pm clear com.ea.aiot.eaglelauncher'
+alias clsFal='adb shell pm clear com.ea.aiot.falconlauncher'
+alias clsHawk='adb shell pm clear com.ea.iot.hawklauncher'

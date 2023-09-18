@@ -269,7 +269,7 @@ alias aListSysPkgs='adb shell pm list packages -s' #列出系统应用的所有�
 alias aList3Pkgs='adb shell pm list packages -3'  #列出除了系统应用的第三方应用包名
 alias aListPkg='adb shell am monitor' #持续监控app的报名
 alias aListPkgFrom='adb shell pm list packages -i' #显示包的安装来源
-alias alistPkgAs='adb shell pm list pakcages -f' #显示包及关联的文件
+alias aListPkgAs='adb shell pm list pakcages -f' #显示包及关联的文件
 
 ### 焦点
 alias aFindFocus='adb shell dumpsys window | findstr mCurrentFocus'
