@@ -87,7 +87,7 @@ alias toDevConSpace='cd /d/workspace/program/设备入网需要的配置文件'
 alias startDevConSpace='start /d/workspace/program/设备入网需要的配置文件'
 
 ##alias start700Dir='start /d/workspace/program/700远程升级工具'
-alias start700Tool='start /d/workspace/program/700远程升级工具/700升级工具.exe'
+alias start700Tool='start /d/workspace/program/dnake刷机工具及dnake原生资源/700远程升级工具/700升级工具.exe'
 
 alias startPortTool='start /d/software/serialportutilitylatest-v3.8.5/SerialPortUtility/SerialPortUtility.exe'
 
@@ -98,4 +98,4 @@ alias microV='adb shell dumpsys package com.ea.aiot.microraptorlauncher | findst
 
 alias clsEa='adb shell pm clear com.ea.aiot.eaglelauncher'
 alias clsFal='adb shell pm clear com.ea.aiot.falconlauncher'
-alias clsHawk='adb shell pm clear com.ea.iot.hawklauncher'
+alias clsHawk='adb shell pm clear com.ea.aiot.hawklauncher'
