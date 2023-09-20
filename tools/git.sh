@@ -1,27 +1,27 @@
 #!/bin/sh
 
 ## for git tools
-alias gAddAll='git add .'
-alias gAdd='git add'
-alias gPull='git pull'
-alias gStatus='git status .'
-alias gCommit='git commit -m'
-alias gPushMaster='git push -u origin HEAD:refs/for/master'
-alias gPush='git push -u origin'
-alias gLog="git log"
-alias gLogS="git log -p"
-alias gLogshow="git log --pretty=oneline"
-alias gShow="git show"
-alias gDiff="git diff"
-alias gBranch='git branch'
-alias gBranchAll='git branch -a'
-alias gRebase='git rebase --hard'
-alias gCheckout='git checkout'
-alias gSubUpdate='git submodule update'
+alias gada='git add .'
+alias gad='git add'
+alias gpl='git pull'
+alias gsts='git status .'
+alias gcmt='git commit -m'
+alias gphMaster='git push -u origin HEAD:refs/for/master'
+alias gph='git push -u origin'
+alias gl="git log"
+alias gls="git log -p"
+alias glsw="git log --pretty=oneline"
+alias gs="git show"
+alias gdf="git diff"
+alias gbh='git branch'
+alias gbha='git branch -a'
+alias grbs='git rebase --hard'
+alias gckt='git checkout'
+alias gsubupdt='git submodule update'
 
-alias gHardPre="git reset HEAD^"
-alias gReHard='git reset --hard '
-alias gResetMaster='git reset –hard origin/master'
+alias ghardPre="git reset HEAD^"
+alias greHard='git reset --hard '
+alias grstMaster='git reset hard origin/master'
 
 function uploadCode(){
     if [ -z "$1" ] ;then
@@ -40,21 +40,21 @@ function uploadCode(){
 	    COMMIT_INFO=$2
 	fi
 	
-	gAddAll;
-	gCommit "${COMMIT_INFO}";
-	gPush HEAD:refs/for/${1}
+	git add .;
+	git commit -m "${COMMIT_INFO}";
+	git push -u origin HEAD:refs/for/${1}
 }
 
 function uploadGitLabCode(){
    if [ "$1" ];then
-	   gAddAll;
+	   git add .;
 	   COMMIT_INFO=`git commit -m "$1"`
 	   echo $COMMIT_INFO
    fi
 }
 
 ## for github
-alias gPushMain='git push -u origin main'
+alias gphMain='git push -u origin main'
 
 function uploadGithubcode(){
 	DATE=`date "+%Y%m%d"`
@@ -65,7 +65,7 @@ function uploadGithubcode(){
 	else
 	    COMMIT_INFO=$1
 	fi
-    gAddAll;
-	gCommit "${COMMIT_INFO}";
-	gPushMain;
+        git add .;
+	git commit -m "${COMMIT_INFO}";
+	git push -u origin main;
 }
