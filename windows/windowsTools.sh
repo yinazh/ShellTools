@@ -37,9 +37,3 @@ alias toCode='cd /d/code'
 ###针对API测试，可使用postman, RunApi
 #alias startRunApi = 'start '
 
-###SwitchHosts
-#alias startSwitchHosts='start /d/Program\ Files/SwitchHosts/SwitchHosts.exe'
-
-###Notepad++
-alias startNotepadd='start /d/Program\ Files\ \(x86\)/Notepad++/notepadd++.exe'
-
