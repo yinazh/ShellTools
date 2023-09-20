@@ -5,18 +5,118 @@
 export SHELL_DIR="${CMDER_ROOT}/../../code/ShellTools"
 
 ### adb服务指令
-alias aStartSev='adb start-server'
-alias aKillSev='adb kill-server'
+#alias aStartSev='adb start-server'
+#alias aKillSev='adb kill-server'
+
+function aStartSev() {
+	if [ "$1" ];then
+	    adb -s $1 start-server
+	else
+		adb start-server
+	fi
+}
+
+function aKillSev() {
+	if [ "$1" ];then
+	    adb -s $1 kill-server
+	else
+		adb kill-server
+	fi
+}
 
 
 ### 操作指令
-alias ashl='adb shell'
-alias arot='adb root'
-alias arbot='adb reboot'
-alias amont='adb remount'
-alias adev='adb devices'
+#alias ashl='adb shell'
+function ashl() {
+	if [ "$1" ];then
+	    adb -s $1 shell
+	else
+		adb shell
+	fi
+}
 
-alias aconn='adb connect'
+#alias arot='adb root'
+function arot() {
+	if [ "$1" ];then
+	    adb -s $1 root
+	else
+		adb root
+	fi
+}
+
+#alias arbot='adb reboot'
+function arbot() {
+	if [ "$1" ];then
+	    adb -s $1 reboot
+	else
+		adb reboot
+	fi
+}
+
+#alias amont='adb remount'
+function amont() {
+	if [ "$1" ];then
+	    adb -s $1 remount
+	else
+		adb remount
+	fi
+}
+
+alias adev='adb devices'
+alias acon='adb connect'
+function condev(){
+  rootinfo=`adb root`
+  alreadyRoot="adbd is already running as root"
+  noPermission="Permission denied"
+ 
+  if [ "$rootinfo" != "${alreadyRoot}" ];then
+      adb root;
+	  wait
+  fi
+  
+  while (true)
+  do
+	  remount=`adb remount`
+	  wait
+	  
+	  if [ "$remount" != "remount succeeded" ];then
+	  	result=$(echo $remount | grep "${noPermission}")
+	    if [[ "$result" != "" ]];then
+		   adb disable-verity;
+		   wait
+		   adb reboot;
+		fi
+	      
+	    echo $remount
+	  else 
+		  echo "connect device success!"
+		  break;
+	  fi
+  done
+}
+
+function conip(){
+  if [ "$1" ];then
+     echo "connect $1"
+     adb connect $1
+  else
+     echo "IP address is null"
+  fi
+}
+
+function consip(){
+  if [ "$1" ];then
+     REMOTE_IP="10.40.20.$1"
+     echo "connect $REMOTE_IP"
+     adb connect $REMOTE_IP
+  else
+     echo "IP address is null"
+  fi
+}
+## for connect device end
+
+
+
 alias adisconn='adb disconnect'
 
 alias ainstal='adb install '
@@ -30,7 +130,14 @@ alias auinstal='adb uninstall'
 ## -k 保留应用配置和缓存文件
 alias auinstak='adb uninstall -k'
 
-alias aShutDown='adb shell reboot -p'
+#alias aShutDown='adb shell reboot -p'
+function aShutDown() {
+	if [ "$1" ];then
+	    adb -s $1 shell reboot -p
+	else
+		adb shell reboot -p
+	fi
+}
 
 ## -W 显示应用启动耗时
 alias astartW="adb shell am start -W "
