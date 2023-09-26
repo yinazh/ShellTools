@@ -4,9 +4,30 @@
 
 export SHELL_DIR="${CMDER_ROOT}/../../code/ShellTools"
 
+### adb指令说明文档
+function adb_tools_help(){
+	ip_help
+	adb_help
+	keydown_help
+	broad_help
+	logcat_help
+	app_runtime_help
+	android_help
+	system_help
+	debug_help
+}
+
+function adb_help(){
+	echo "asser(启动adb)  akser(关闭adb)  ashl(shell)  arot(root)  arbot(reboot)  amont(remount)  adev(devices)  acon(connect)  condev(root+remount)"
+	echo "adiscon(disconnect)  ainstal(install)  ainstar(install -r)  ainstat(install -t安装testOnly=true的应用)  ainstas(install -s安装到dcard)"  
+	echo "ainstag(install -g授予所有运行时权限)  ainstad(install -d允许降级覆盖安装)  auinstak(uninstall -k保留数据和缓存)"
+	echo "apul(pull)  apush(push)  astart(am start)  abroad(am broadcast -a)  acls(pm clear)  astop(am force-stop)"
+	echo "ashutDown  astartW(显示应用启动耗时)"
+}
+
 ### adb服务指令
-alias aStartSev='adb start-server'
-alias aKillSev='adb kill-server'
+alias asser='adb start-server'
+alias akser='adb kill-server'
 
 ### 操作指令
 alias ashl='adb shell'
@@ -46,6 +67,10 @@ function condev(){
   done
 }
 
+function ip_help(){
+	echo "conip(connect ip)  consip(连接同网段内ip)"
+}
+
 function conip(){
   if [ "$1" ];then
      echo "connect $1"
@@ -69,7 +94,7 @@ function consip(){
 
 
 
-alias adisconn='adb disconnect'
+alias adiscon='adb disconnect'
 
 alias ainstal='adb install '
 alias ainstar='adb install -r'
@@ -82,18 +107,23 @@ alias auinstal='adb uninstall'
 ## -k 保留应用配置和缓存文件
 alias auinstak='adb uninstall -k'
 
-alias aShutDown='adb shell reboot -p'
+alias ashutDown='adb shell reboot -p'
 
 ## -W 显示应用启动耗时
 alias astartW="adb shell am start -W "
 
 ### 模拟操作
-alias apul='adb pull'
-alias apush='adb push'
+alias apl='adb pull'
+alias aph='adb push'
 alias astart='adb shell am start'
 alias abroad='adb shell am broadcast -a'
 alias acls='adb shell pm clear'
-alias aStop='adb shell am force-stop' #强制停止应用
+alias astop='adb shell am force-stop' #强制停止应用
+
+function keydown_help(){
+	echo "keyDown(keyevent)  whileKeyDown(loop keyevent)  keyBack  keyHome  keyScreenCap  keyScreenOn  keyScreenOff"
+	echo "keyVol+  keyVol-  keyBright+  keyBright-  keyInput  keyMute  keyPower"
+}
 
 function keyDown() {
 	if [ "$1" ];then
@@ -129,14 +159,19 @@ alias keyBright-="adb shell input keyevent 220"
 alias keyInput='adb shell input text'
 
 
-alias broadcastBootCompleted="adb shell am broadcast -a android.intent.action.BOOT_COMPLETED"
-alias broadcastBootCompletedPkg="adb shell am broadcast -a android.intent.action.BOOT_COMPLETED -n "
-alias broadcastScreenOn="adb shell am broadcast -a android.intent.action.SCREEN_ON"
-alias broadcastScreenOnPkg="adb shell am broadcast -a android.intent.action.SCREEN_ON -n "
-alias broadcastScreenOff="adb shell am broadcast -a android.intent.action.SCREEN_OFF"
-alias broadcastScreenOffPkg="adb shell am broadcast -a android.intent.action.SCREEN_OFF -n "
+function broad_help(){
+	echo "bBootCompleted  bBootCompletedPkg  bScreenOn  bScreenOnPkg  bScreenOff  bScrenOffPkg"
+	echo "bAction  whileBAction"
+}
 
-function broadcastAction(){
+alias bBootCompleted="adb shell am broadcast -a android.intent.action.BOOT_COMPLETED"
+alias bBootCompletedPkg="adb shell am broadcast -a android.intent.action.BOOT_COMPLETED -n "
+alias bScreenOn="adb shell am broadcast -a android.intent.action.SCREEN_ON"
+alias bScreenOnPkg="adb shell am broadcast -a android.intent.action.SCREEN_ON -n "
+alias bScreenOff="adb shell am broadcast -a android.intent.action.SCREEN_OFF"
+alias bScreenOffPkg="adb shell am broadcast -a android.intent.action.SCREEN_OFF -n "
+
+function bAction(){
    if [ "$1" ];then
       adb shell am broadcast -a $1;
    else
@@ -144,7 +179,7 @@ function broadcastAction(){
    fi
 }
 
-function whileBroadcastAction(){
+function whileBAction(){
   if [ "$1" ];then
     while (true)
     do
@@ -166,6 +201,12 @@ function clearApp(){
 }
 
 ### 调试操作
+function logcat_help(){
+	echo "alogt(-v time)  alogc(-c)  alruntime(AndroidRuntime)  alogw(*W)  aloge(*E)  abug(bugreport)  pidcat"
+	echo "alogcat(radio, main, events, null > file)  systrace"
+}
+
+
 alias alogt='adb logcat -v time'
 alias alogc='adb logcat -c'
 alias alruntime='adb logcat -s AndroidRuntime'
@@ -213,12 +254,18 @@ function alogcat(){
   echo "end catch log"
 }
 
-alias aTop='adb shell top'
-alias aTop10='adb shell top -s 10' #查看占用内存前10 的app
+
+function app_runtime_help(){
+	echo "atop  atop10  adumps  adumAcy(当前应用)  ameminfo(内存使用情况)  aserlist(服务列表)"
+	echo "adumpHeap(堆栈信息>file)  adumpsPkg(堆栈运行信息)  adumpPkgFile(堆栈运行信息>file)"
+	echo "afPkgVsion(应用版本pkg)  alpkgs(列出所有应用)  alSysPkgs(列举系统应用)  alPkgFrom(显示安装来源)  alPkgAs(显示包及关联文件)"
+}
+alias atop='adb shell top'
+alias atop10='adb shell top -s 10' #查看占用内存前10 的app
 alias adumps='adb shell dumpsys activity'
 alias adumAcy='adb shell dumpsys activity activities | grep mFocusedActivity'
-alias aMeminfo='adb shell dumpsys meminfo' #内存使用情况Memory Usage
-alias aSevList='adb shell service list'
+alias ameminfo='adb shell dumpsys meminfo' #内存使用情况Memory Usage
+alias aserlist='adb shell service list'
 
 
 function adumpHeap(){
@@ -255,37 +302,51 @@ function adumpPkgFile(){
 alias systrace='python /d/software/platform-tools_33/systrace/systrace.py'
 
 
+
+function android_help(){
+	echo "aSideLoad  aBootloader  aRecovery  aEdl  aDisverity"
+}
 ### 模式权限相关
 alias aSideLoad='adb sideload'
 alias aBootloader='adb reboot bootloader'
 alias aRecovery='adb reboot recovery'
 alias aEdl='adb reboot edl'
-alias aDisVerity='adb disable-verity'
+alias aDisverity='adb disable-verity'
+
+
+function android_system_help(){
+	echo "arprop(getprop)  awprop(setprop)	abattery  acpuInof  acpuInfoM  amemInfo  amodel  amac"
+	echo "awmSize  awmSizeReset  adensity  adensityReset  adeviceId  aipWlan  aipEth  awindow"
+	echo "aAndroidVersion  asdk  abuildProp acpuSupl  advkHeapSize  aSufaceFlinger  agfxinfo(测试性能pkg)"
+	echo "aSystem(system属性列表)  aGlobal(global属性列表)  aSecure(secure属性列表)"
+	echo "arSystem   arGlobal  arSecure  awSystem  awGlobal  awSecure"
+	echo "startSettings  closeAdb  openWifi  closeWifi"
+}
 
 
 ### 读取系统配置
-alias aReadProp='adb shell getprop '
-alias aWriteProp='adb shell setprop '
-alias aBattery='adb shell dumpsys battery'
-alias aCpuInfo='adb shell cat /proc/cpuinfo'
-alias aCpuInfoM='adb shell dumpsys cpuinfo'
-alias aMemoryInfo='adb shell dumpsys meminfo'
-alias aModel='adb shell getprop ro.product.model'  #设备型号
-alias aMAC='adb shell cat sys/class/net/wlan0/address'  #读取mac地址
-alias aWmSize='adb shell wm size' #查看屏幕分辨率
-alias aWmSizeReset='adb shell wm size reset'
-alias aDensity='adb shell wm density' #查看屏幕密度
-alias aDensityReset='adb shell wm density reest'
-alias aDeviceId='adb get-serialno'
-alias aIpWlan='adb shell ifconfig wlan0'
-alias aIpEth='adb shell ifconfig eth0'
+alias arprop='adb shell getprop '
+alias awprop='adb shell setprop '
+alias abattery='adb shell dumpsys battery'
+alias acpuInfo='adb shell cat /proc/cpuinfo'
+alias acpuInfoM='adb shell dumpsys cpuinfo'
+alias amemInfo='adb shell dumpsys meminfo'
+alias amodel='adb shell getprop ro.product.model'  #设备型号
+alias amac='adb shell cat sys/class/net/wlan0/address'  #读取mac地址
+alias awmSize='adb shell wm size' #查看屏幕分辨率
+alias awmSizeReset='adb shell wm size reset'
+alias adensity='adb shell wm density' #查看屏幕密度
+alias adensityReset='adb shell wm density reest'
+alias adeviceId='adb get-serialno'
+alias aipWlan='adb shell ifconfig wlan0'
+alias aipEth='adb shell ifconfig eth0'
 ##获取屏幕显示信息
-alias aWindow='adb shell dumpsys window displays'
+alias awindow='adb shell dumpsys window displays'
 alias aAndroidVersion='adb shell getprop ro.build.version.release'
-alias aSdk='adb shell getprop ro.build.version.sdk'
-alias aBuildProp='adb shell cat system/build.prop'
-alias aCpuSupl='adb shell getprop ro.product.cpu.abilist'
-alias aDvkHeapSize='adb shell getprop dalvik.vm.heapsize'
+alias asdk='adb shell getprop ro.build.version.sdk'
+alias abuildProp='adb shell cat system/build.prop'
+alias acpuSupl='adb shell getprop ro.product.cpu.abilist'
+alias advkHeapSize='adb shell getprop dalvik.vm.heapsize'
 
 
 ##查看SurfaceFlinger
@@ -296,16 +357,16 @@ alias agfxinfo='adb shell dumpsys gfxinfo '
 alias aSystem='adb shell settings list system'
 alias aGlobal='adb shell settings list global'
 alias aSecure='adb shell settings list secure'
-alias aGetSystem='adb shell settings get system'
-alias aGetGlobal='adb shell settings get global'
-alias aGetSecure='adb shell settings get secure'
-alias aPutSystem='adb shell settings put system'
-alias aPutGlobal='adb shell settings put global'
-alias aPutSecure='adb shell settings put secure'
+alias arSystem='adb shell settings get system'
+alias arGlobal='adb shell settings get global'
+alias arSecure='adb shell settings get secure'
+alias awSystem='adb shell settings put system'
+alias awGlobal='adb shell settings put global'
+alias awSecure='adb shell settings put secure'
 
 
 #####获取系统版本号
-function afindPkgVsion(){
+function afPkgVsion(){
 	if [ "$1" ];then
        echo "finding ..."
        adb shell dumpsys package $1 | findstr version
@@ -316,15 +377,22 @@ function afindPkgVsion(){
 
 
 ### 读取系统内容
-alias aListPkgs='adb shell pm list packages'
-alias aListSysPkgs='adb shell pm list packages -s' #列出系统应用的所有包名
-alias aList3Pkgs='adb shell pm list packages -3'  #列出除了系统应用的第三方应用包名
-alias aListPkg='adb shell am monitor' #持续监控app的报名
-alias aListPkgFrom='adb shell pm list packages -i' #显示包的安装来源
-alias aListPkgAs='adb shell pm list pakcages -f' #显示包及关联的文件
+alias alPkgs='adb shell pm list packages'
+alias alSysPkgs='adb shell pm list packages -s' #列出系统应用的所有包名
+alias al3Pkgs='adb shell pm list packages -3'  #列出除了系统应用的第三方应用包名
+alias alPkg='adb shell am monitor' #持续监控app的报名
+alias alPkgFrom='adb shell pm list packages -i' #显示包的安装来源
+alias alPkgAs='adb shell pm list pakcages -f' #显示包及关联的文件
+
+
+function debug_help(){
+    echo "amonkey  amonkeyPkg100"
+    echo "afocus  aScrenRecord  screenCap  aUIDump  aScreenCap  startUiAutomatorViewer  startScreen"
+    echo "startUIAutomator  screenCapFile"
+}
 
 ### 焦点
-alias aFindFocus='adb shell dumpsys window | findstr mCurrentFocus'
+alias afocus='adb shell dumpsys window | findstr mCurrentFocus'
 
 ### 录屏/截屏
 alias aScreenRecord='adb shell screenrecord /sdcard/filename.mp4'
@@ -335,9 +403,9 @@ function screenCap(){
 }
 
 ### Monkey测试指令
-alias aMonkey='adb shell monkey'
+alias amonkey='adb shell monkey'
 
-function aMonkeyPkg100(){
+function amonkeyPkg100(){
 	if [ "$1" ];then
        adb shell monkey -p $1 100
     else

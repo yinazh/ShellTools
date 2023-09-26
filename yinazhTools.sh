@@ -8,6 +8,7 @@ export TOOLS_PATH="${CMDER_ROOT}/../../code/ShellTools"
 
 ## source all tools shell tools
 source ${TOOLS_PATH}/env/windowsEnv.sh
+source ${TOOLS_PATH}/help/help.sh
 source ${TOOLS_PATH}/tools/adb.sh
 source ${TOOLS_PATH}/tools/fastboot.sh
 source ${TOOLS_PATH}/tools/java.sh

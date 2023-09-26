@@ -1,6 +1,13 @@
 #!/bin/sh
 
 ## for git tools
+function git_help(){
+	echo "gada(add .)  gad(add)  gpl(pul)  gsts(status)  gcmt(commit -m)  gph(push)  gdf(diff)  gbh(branch)  gba(branch -a)"
+	echo "gl(log)  gls(log -p)  glsw(log pretty==oneline)  gs(show)  grbs(rebase -hard)  gckt(checkout)"
+	echo "gsubupdt(submodule update)  ghardPre(reset HEAD) greHard(reset --hard)  grstMaster(reset hard master)"
+	echo "gphMaster(push master)  uploadCode  uploadGitLabelCode  uploadGitHubCode"
+}
+
 alias gada='git add .'
 alias gad='git add'
 alias gpl='git pull'
