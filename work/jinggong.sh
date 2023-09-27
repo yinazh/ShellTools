@@ -1,5 +1,11 @@
 #!/bin/sh
 
+function jinggong_help(){
+	echo -e "${FONT_RED_UNDERLINE}vaiot_help${FONT_RES}(开发资源) ${FONT_GREEN_UNDERLINE}editVaiotDoc${FONT_RES}(编辑开发资源)"
+	echo -e "${FONT_BLUE_UNDERLINE}gateway_help${FONT_RES}(配网遇到的问题)  ${FONT_YELLOW_UNDERLINE}editGatewayDoc${FONT_RES}(编辑记录配网问题)"
+	echo -e "${FONT_PINK_UNDERLINE}editLocalReleaseNote${FONT_RES}(本地版本释放记录)  ${FONT_BLUE_UNDERLINE}editRemoteReleaseNote${FONT_RES}(远程版本释放记录)"
+}
+
 ### 15.6寸屏，86屏，12.3寸屏应用控制
 
 #### 

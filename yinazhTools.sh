@@ -22,9 +22,7 @@ source ${TOOLS_PATH}/work/jinggong.sh
 source ${TOOLS_PATH}/windows/windowsTools.sh
 
 function helps(){
-	yellowUnderlineFont "Android Tools Help ===>"
         adb_tools_help
 	git_help
-	yellowUnderlineFont "Other Help ===>"
 	doc_help
 }
