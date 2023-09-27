@@ -13,16 +13,16 @@ function adb_tools_help(){
 	logcat_help
 	app_runtime_help
 	android_help
-	system_help
+	android_system_help
 	debug_help
 }
 
 function adb_help(){
-	echo "asser(启动adb)  akser(关闭adb)  ashl(shell)  arot(root)  arbot(reboot)  amont(remount)  adev(devices)  acon(connect)  condev(root+remount)"
-	echo "adiscon(disconnect)  ainstal(install)  ainstar(install -r)  ainstat(install -t安装testOnly=true的应用)  ainstas(install -s安装到dcard)"  
-	echo "ainstag(install -g授予所有运行时权限)  ainstad(install -d允许降级覆盖安装)  auinstak(uninstall -k保留数据和缓存)"
-	echo "apul(pull)  apush(push)  astart(am start)  abroad(am broadcast -a)  acls(pm clear)  astop(am force-stop)"
-	echo "ashutDown  astartW(显示应用启动耗时)"
+	echo -e "${FONT_YELLOW_UNDERLINE}asser${FONT_RES}(启动adb)  ${FONT_YELLOW_UNDERLINE}akser${FONT_RES}(关闭adb)  ${FONT_RED_UNDERLINE}ashl${FONT_RES}(shell)  ${FONT_GREEN_UNDERLINE}arot${FONT_RES}(root)  ${FONT_RED_UNDERLINE}arbot${FONT_RES}(reboot)  ${FONT_YELLOW_UNDERLINE}amont${FONT_RES}(remount)  ${FONT_RED_UNDERLINE}adev${FONT_RES}(devices)  ${FONT_GREEN_UNDERLINE}acon${FONT_RES}(connect)  ${FONT_RED_UNDERLINE}condev${FONT_RES}(root+remount)"
+	echo -e "${FONT_RED_UNDERLINE}adiscon${FONT_RES}(disconnect)  ${FONT_GREEN_UNDERLINE}ainstal${FONT_RES}(install)  ${FONT_BLUE_UNDERLINE}ainstar${FONT_RES}(install -r)  ${FONT_PINK_UNDERLINE}ainstat${FONT_RES}(install -t安装testOnly=true的应用)  ${FONT_YELLOW_UNDERLINE}ainstas${FONT_RES}(install -s安装到dcard)"  
+	echo -e "${FONT_YELLOW_UNDERLINE}ainstag${FONT_RES}(install -g授予所有运行时权限)  ${FONT_RED_UNDERLINE}ainstad${FONT_RES}(install -d允许降级覆盖安装)  ${FONT_GREEN_UNDERLINE}auinstak${FONT_RES}(uninstall -k保留数据和缓存)"
+	echo -e "${FONT_RED_UNDERLINE}apul${FONT_RES}(pull)  ${FONT_BLUE_UNDERLINE}apush${FONT_RES}(push)  ${FONT_YELLOW_UNDERLINE}astart${FONT_RES}(am start)  ${FONT_RED_UNDERLINE}abroad${FONT_RES}(am broadcast -a)  ${FONT_BLUE_UNDERLINE}acls${FONT_RES}(pm clear)  ${FONT_YELLOW_UNDERLINE}astop${FONT_RES}(am force-stop)"
+	echo -e "${FONT_YELLOW_UNDERLINE}ashutDown${FONT_RES}  ${FONT_RED_UNDERLINE}astartW${FONT_RES}(显示应用启动耗时)"
 }
 
 ### adb服务指令
@@ -68,7 +68,7 @@ function condev(){
 }
 
 function ip_help(){
-	echo "conip(connect ip)  consip(连接同网段内ip)"
+	echo -e "${FONT_RED_UNDERLINE}conip${FONT_RES}(connect ip)  ${FONT_GREEN_UNDERLINE}consip${FONT_RES}(连接同网段内ip)"
 }
 
 function conip(){
@@ -121,8 +121,8 @@ alias acls='adb shell pm clear'
 alias astop='adb shell am force-stop' #强制停止应用
 
 function keydown_help(){
-	echo "keyDown(keyevent)  whileKeyDown(loop keyevent)  keyBack  keyHome  keyScreenCap  keyScreenOn  keyScreenOff"
-	echo "keyVol+  keyVol-  keyBright+  keyBright-  keyInput  keyMute  keyPower"
+	echo -e "${FONT_RED_UNDERLINE}keyDown${FONT_RES}(keyevent)  ${FONT_YELLOW_UNDERLINE}whileKeyDown${FONT_RES}(loop keyevent)  ${FONT_BLUE_UNDERLINE}keyBack${FONT_RES}  ${FONT_GREEN_UNDERLINE}keyHome${FONT_RES}  ${FONT_YELLOW_UNDERLINE}keyScreenCap${FONT_RES}  ${FONT_RED_UNDERLINE}keyScreenOn${FONT_RES}  ${FONT_GREEN_UNDERLINE}keyScreenOff${FONT_RES}"
+	echo -e "${FONT_BLUE_UNDERLINE}keyVol+${FONT_RES}  ${FONT_BLUE_UNDERLINE}keyVol-${FONT_RES}  ${FONT_YELLOW_UNDERLINE}keyBright+${FONT_RES}  ${FONT_YELLOW_UNDERLINE}keyBright-${FONT_RES}  ${FONT_RED_UNDERLINE}keyInput${FONT_RES}  ${FONT_BLUE_UNDERLINE}keyMute${FONT_RES}  ${FONT_YELLOW_UNDERLINE}keyPower${FONT_RES}"
 }
 
 function keyDown() {
@@ -160,8 +160,8 @@ alias keyInput='adb shell input text'
 
 
 function broad_help(){
-	echo "bBootCompleted  bBootCompletedPkg  bScreenOn  bScreenOnPkg  bScreenOff  bScrenOffPkg"
-	echo "bAction  whileBAction"
+	echo -e "${FONT_BLUE_UNDERLINE}bBootCompleted${FONT_RES}  ${FONT_BLUE_UNDERLINE}bBootCompletedPkg${FONT_RES}  ${FONT_YELLOW_UNDERLINE}bScreenOn${FONT_RES}  ${FONT_GREEN_UNDERLINE}bScreenOnPkg${FONT_RES}  ${FONT_YELLOW_UNDERLINE}bScreenOff${FONT_RES}  ${FONT_YELLOW_UNDERLINE}bScrenOffPkg${FONT_RES}"
+	echo -e "${FONT_RED_UNDERLINE}bAction${FONT_RES}  ${FONT_YELLOW_UNDERLINE}whileBAction${FONT_RES}"
 }
 
 alias bBootCompleted="adb shell am broadcast -a android.intent.action.BOOT_COMPLETED"
@@ -202,8 +202,8 @@ function clearApp(){
 
 ### 调试操作
 function logcat_help(){
-	echo "alogt(-v time)  alogc(-c)  alruntime(AndroidRuntime)  alogw(*W)  aloge(*E)  abug(bugreport)  pidcat"
-	echo "alogcat(radio, main, events, null > file)  systrace"
+	echo -e "${FONT_YELLOW_UNDERLINE}alogt${FONT_RES}(-v time)  ${FONT_RED_UNDERLINE}alogc${FONT_RES}(-c)  ${FONT_BLUE_UNDERLINE}alruntime${FONT_RES}(AndroidRuntime)  ${FONT_GREEN_UNDERLINE}alogw${FONT_RES}(*W)  ${FONT_RED_UNDERLINE}aloge${FONT_RES}(*E)  ${FONT_PINK_UNDERLINE}abug${FONT_RES}(bugreport)  ${FONT_GREEN_UNDERLINE}pidcat${FONT_RES}"
+	echo -e "${FONT_BLUE_UNDERLINE}alogcat${FONT_RES}(radio, main, events, null > file)  ${FONT_RED_UNDERLINE}systrace${FONT_RES}"
 }
 
 
@@ -256,9 +256,9 @@ function alogcat(){
 
 
 function app_runtime_help(){
-	echo "atop  atop10  adumps  adumAcy(当前应用)  ameminfo(内存使用情况)  aserlist(服务列表)"
-	echo "adumpHeap(堆栈信息>file)  adumpsPkg(堆栈运行信息)  adumpPkgFile(堆栈运行信息>file)"
-	echo "afPkgVsion(应用版本pkg)  alpkgs(列出所有应用)  alSysPkgs(列举系统应用)  alPkgFrom(显示安装来源)  alPkgAs(显示包及关联文件)"
+	echo -e "${FONT_RED_UNDERLINE}atop${FONT_RES}  ${FONT_GREEN_UNDERLINE}atop10${FONT_RES}  ${FONT_BLUE_UNDERLINE}adumps${FONT_RES}  ${FONT_YELLOW_UNDERLINE}adumAcy${FONT_RES}(当前应用)  ${FONT_PINK_UNDERLINE}ameminfo${FONT_RES}(内存使用情况)  ${FONT_RED_UNDERLINE}aserlist${FONT_RES}(服务列表)"
+	echo -e "${FONT_BLUE_UNDERLINE}adumpHeap${FONT_RES}(堆栈信息>file)  ${FONT_YELLOW_UNDERLINE}adumpsPkg${FONT_RES}(堆栈运行信息)  ${FONT_RED_UNDERLINE}adumpPkgFile${FONT_RES}(堆栈运行信息>file)"
+	echo -e "${FONT_GREEN_UNDERLINE}afPkgVsion${FONT_RES}(应用版本pkg)  ${FONT_BLUE_UNDERLINE}alpkgs${FONT_RES}(列出所有应用)  ${FONT_RED_UNDERLINE}alSysPkgs${FONT_RES}(列举系统应用)  ${FONT_YELLOW_UNDERLINE}alPkgFrom(${FONT_RES}显示安装来源)  ${FONT_GREEN_UNDERLINE}alPkgAs${FONT_RES}(显示包及关联文件)"
 }
 alias atop='adb shell top'
 alias atop10='adb shell top -s 10' #查看占用内存前10 的app
@@ -304,7 +304,7 @@ alias systrace='python /d/software/platform-tools_33/systrace/systrace.py'
 
 
 function android_help(){
-	echo "aSideLoad  aBootloader  aRecovery  aEdl  aDisverity"
+	echo -e "${FONT_BLUE_UNDERLINE}aSideLoad${FONT_RES}  ${FONT_YELLOW_UNDERLINE}aBootloader${FONT_RES}  ${FONT_RED_UNDERLINE}aRecovery${FONT_RES}  ${FONT_GREEN_UNDERLINE}aEdl${FONT_RES}  ${FONT_YELLOW_UNDERLINE}aDisverity${FONT_RES}"
 }
 ### 模式权限相关
 alias aSideLoad='adb sideload'
@@ -315,12 +315,12 @@ alias aDisverity='adb disable-verity'
 
 
 function android_system_help(){
-	echo "arprop(getprop)  awprop(setprop)	abattery  acpuInof  acpuInfoM  amemInfo  amodel  amac"
-	echo "awmSize  awmSizeReset  adensity  adensityReset  adeviceId  aipWlan  aipEth  awindow"
-	echo "aAndroidVersion  asdk  abuildProp acpuSupl  advkHeapSize  aSufaceFlinger  agfxinfo(测试性能pkg)"
-	echo "aSystem(system属性列表)  aGlobal(global属性列表)  aSecure(secure属性列表)"
-	echo "arSystem   arGlobal  arSecure  awSystem  awGlobal  awSecure"
-	echo "startSettings  closeAdb  openWifi  closeWifi"
+	echo -e "${FONT_RED_UNDERLINE}arprop${FONT_RES}(getprop)  ${FONT_GREEN_UNDERLINE}awprop${FONT_RES}(setprop)	${FONT_BLUE_UNDERLINE}abattery${FONT_RES}  ${FONT_YELLLOW_UNDERLINE}acpuInof${FONT_RES}  ${FONT_PINK_UNDERLINE}acpuInfoM${FONT_RES}  ${FONT_GREEN_UNDERLINE}amemInfo${FONT_RES}  ${FONT_RED_UNDERLINE}amodel${FONT_RES}  ${FONT_BLUE_UNDERLINE}amac${FONT_RES}"
+	echo -e "${FONT_BLUE_UNDERLINE}awmSize${FONT_RES}  ${FONT_YELLOW_UNDERLINE}awmSizeReset${FONT_RES}  ${FONT_BLUE_UNDERLINE}adensity${FONT_RES}  ${FONT_YELLOW_UNDERLINE}adensityReset${FONT_RES}  ${FONT_RED_UNDERLINE}adeviceId${FONT_RES}  ${FONT_GREEN_UNDERLINE}aipWlan${FONT_RES}  ${FONT_GREEN_UNDERLINE}aipEth${FONT_RES}  ${FONT_RED_UNDERLINE}awindow${FONT_RES}"
+	echo -e "${FONT_GREEN_UNDERLINE}aAndroidVersion${FONT_RES}  ${FONT_YELLOW_UNDERLINE}asdk${FONT_RES}  ${FONT_RED_UNDERLINE}abuildProp${FONT_RES} ${FONT_PINK_UNDERLINE}acpuSupl${FONT_RES}  ${FONT_RED_UNDERLINE}advkHeapSize${FONT_RES}  ${FONT_GREEN_UNDERLINE}aSufaceFlinger${FONT_RES}  ${FONT_YELLOW_UNDERLINE}agfxinfo${FONT_RES}(测试性能pkg)"
+	echo -e "${FONT_RED_UNDERLINE}aSystem${FONT_RES}(system属性列表)  ${FONT_GREEN_UNDERLINE}aGlobal${FONT_RES}(global属性列表)  ${FONT_YELLOW_UNDERLINE}aSecure${FONT_RES}(secure属性列表)"
+	echo -e "${FONT_RED_UNDERLINE}arSystem${FONT_RES}   ${FONT_GREEN_UNDERLINE}arGlobal${FONT_RES}  ${FONT_YELLOW_UNDERLINE}arSecure${FONT_RES}  ${FONT_RED_UNDERLINE}awSystem${FONT_RES}  ${FONT_GREEN_UNDERLINE}awGlobal${FONT_RES}  ${FONT_YELLOW_UNDERLINE}awSecure${FONT_RES}"
+	echo -e "${FONT_YELLOW_UNDERLINE}startSettings${FONT_RES}  ${FONT_PINK_UNDERLINE}closeAdb${FONT_RES}  ${FONT_GREEN_UNDERLINE}openWifi${FONT_RES}  ${FONT_RED_UNDERLINE}closeWifi${FONT_RES}"
 }
 
 
@@ -386,9 +386,9 @@ alias alPkgAs='adb shell pm list pakcages -f' #显示包及关联的文件
 
 
 function debug_help(){
-    echo "amonkey  amonkeyPkg100"
-    echo "afocus  aScrenRecord  screenCap  aUIDump  aScreenCap  startUiAutomatorViewer  startScreen"
-    echo "startUIAutomator  screenCapFile"
+    echo -e "${FONT_RED_UNDERLINE}amonkey${FONT_RES}  ${FONT_YELLOW_UNDERLINE}amonkeyPkg100${FONT_RES}"
+    echo -e "${FONT_GREEN_UNDERLINE}afocus${FONT_RES}  ${FONT_GREEN_UNDERLINE}aScrenRecord${FONT_RES}  ${FONT_BLUE_UNDERLINE}screenCap${FONT_RES}  ${FONT_YELLOW_UNDERLINE}aUIDump${FONT_RES}  ${FONT_RED_UNDERLINE}aScreenCap${FONT_RES}  ${FONT_GREEN_UNDERLINE}startUiAutomatorViewer${FONT_RES}  ${FONT_GREEN_UNDERLINE}startScreen${FONT_RES}"
+    echo -e "${FONT_RED_UNDERLINE}startUIAutomator${FONT_RES}  ${FONT_YELLOW_UNDERLINE}screenCapFile${FONT_RES}"
 }
 
 ### 焦点

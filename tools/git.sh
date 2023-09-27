@@ -2,10 +2,10 @@
 
 ## for git tools
 function git_help(){
-	echo "gada(add .)  gad(add)  gpl(pul)  gsts(status)  gcmt(commit -m)  gph(push)  gdf(diff)  gbh(branch)  gba(branch -a)"
-	echo "gl(log)  gls(log -p)  glsw(log pretty==oneline)  gs(show)  grbs(rebase -hard)  gckt(checkout)"
-	echo "gsubupdt(submodule update)  ghardPre(reset HEAD) greHard(reset --hard)  grstMaster(reset hard master)"
-	echo "gphMaster(push master) gphMain(push main) uploadCode  uploadGitLabelCode  uploadGitHubCode"
+	echo -e "${BG_RED}gada${FONT_RES}(add .)  ${FONT_BLUE_UNDERLINE}gad${FONT_RES}(add)  ${FONT_RED_UNDERLINE}gpl${FONT_RES}(pul)  ${FONT_GREEN_UNDERLINE}gsts${FONT_RES}(status)  ${FONT_PINK_UNDERLINE}gcmt${FONT_RES}(commit -m)  ${FONT_GREEN_UNDERLINE}gph${FONT_RES}(push)  ${FONT_BLUE_UNDERLINE}gdf${FONT_RES}(diff)  ${FONT_RED_UNDERLINE}gbh${FONT_RES}(branch)  ${FONT_PINK_UNDERLINE}gba${FONT_RES}(branch -a)"
+	echo -e "${FONT_GREEN_UNDERLINE}gl${FONT_RES}(log)  ${FONT_RED_UNDERLINE}gls${FONT_RES}(log -p)  ${FONT_RED_UNDERLINE}glsw${FONT_RES}(log pretty==oneline)  ${FONT_BLUE_UNDERLINE}gs${FONT_RES}(show)  ${FONT_YELLOW_UNDERLINE}grbs${FONT_RES}(rebase -hard)  ${FONT_RED_UNDERLINE}gckt${FONT_RES}(checkout)"
+	echo -e "${FONT_RED_UNDERLINE}gsubupdt${FONT_RES}(submodule update)  ${FONT_RED_UNDERLINE}ghardPre${FONT_RES}(reset HEAD) ${FONT_RED_UNDERLINE}greHard${FONT_RES}(reset --hard)  ${FONT_RED_UNDERLINE}grstMaster${FONT_RES}(reset hard master)"
+	echo -e "${FONT_YELLOW_UNDERLINE}gphMaster${FONT_RES}(push master)  ${FONT_RED_UNDERLINE}gphMain${FONT_RES}(push main) ${FONT_GREEN_UNDERLINE}uploadCode${FONT_RES}  ${FONT_YELLOW_UNDERLINE}uploadGitLabelCode${FONT_RES}  ${FONT_PINK_UNDERLINE}uploadGitHubCode${FONT_RES}"
 }
 
 alias gada='git add .'
