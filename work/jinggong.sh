@@ -99,3 +99,12 @@ alias microV='adb shell dumpsys package com.ea.aiot.microraptorlauncher | findst
 alias clsEa='adb shell pm clear com.ea.aiot.eaglelauncher'
 alias clsFal='adb shell pm clear com.ea.aiot.falconlauncher'
 alias clsHawk='adb shell pm clear com.ea.aiot.hawklauncher'
+
+alias vaiot_help='cat /d/workspace/开发资源.md'
+alias editVaiotDoc='start /d/workspace/开发资源.md'
+
+alias gateway_help='cat /d/workspace/开发配网遇到的问题.md'
+#alias editGatewayDoc='start /d/workspace/开发配网遇到的问题.md'
+
+alias editLocalReleaseNote='start /d/workspace/release_version/local_release_notes.md'
+alias editRemoteReleaseNote='start /d/workspace/release_version/remote_release_notes.md'
