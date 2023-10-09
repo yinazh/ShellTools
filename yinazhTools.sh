@@ -20,9 +20,11 @@ source ${TOOLS_PATH}/tools/apt.sh
 #source ${TOOLS_PATH}/work/puppyTools.sh
 source ${TOOLS_PATH}/work/jinggong.sh
 source ${TOOLS_PATH}/windows/windowsTools.sh
+source ${TOOLS_PATH}/user.sh
 
 function helps(){
         adb_tools_help
 	git_help
 	doc_help
+	windows_help
 }

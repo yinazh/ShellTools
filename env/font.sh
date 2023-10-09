@@ -40,7 +40,7 @@ BG_RED='\e[1;41m'
 BG_GREEN='\e[1;42m' 
 BG_YELLOW='\e[1;43m' 
 BG_BLUE='\e[1;44m' 
-BAG_PINK='\e[1;45m' 
+BG_PINK='\e[1;45m' 
 
 FONT_RED_V2=$(tput setaf 1)
 FONT_GREEN_V2=$(tput setaf 2)

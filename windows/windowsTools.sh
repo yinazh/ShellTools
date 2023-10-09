@@ -1,6 +1,11 @@
 #!/bin/sh
 
 ## start Software
+function windows_help(){
+    echo -e "${FONT_RED_UNDERLINE}startScrcpy${FONT_RES}  ${FONT_GREEN_UNDERLINE}startZeal${FONT_RES}"
+    echo -e "${FONT_BLUE_UNDERLINE}openAndroidSdkDir${FONT_RES}  ${FONT_YELLOW_UNDERLINE}toAndroidSDk${FONT_RES}  ${FONT_PINK_UNDERLINE}startDpan${FONT_RES}"
+}
+
 alias startScrcpy='start /d/software/scrcpy-win64-v1.24/scrcpy.exe'
 alias startZeal='start /d/software/zeal-portable-0.6.1-windows-x64/zeal-portable-0.6.1-windows-x64/zeal.exe'
 

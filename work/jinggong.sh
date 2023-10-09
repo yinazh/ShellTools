@@ -1,7 +1,8 @@
 #!/bin/sh
 
 function jinggong_help(){
-	echo -e "${FONT_RED_UNDERLINE}vaiot_help${FONT_RES}(开发资源) ${FONT_GREEN_UNDERLINE}editVaiotDoc${FONT_RES}(编辑开发资源)"
+	echo -e "${FONT_RED_UNDERLINE}vaiot_develop_help${FONT_RES}(开发资源) ${FONT_GREEN_UNDERLINE}vaiot_url_help${FONT_RES}(精工网址导航)"
+	echo -e "${FONT_GREEN_UNDERLINE}code_help${FONT_RES}(代码提示) ${FONT_YELLOW_UNDERLINE}user_help${FONT_RES}(个人资料)"
 	echo -e "${FONT_BLUE_UNDERLINE}gateway_help${FONT_RES}(配网遇到的问题)  ${FONT_YELLOW_UNDERLINE}editGatewayDoc${FONT_RES}(编辑记录配网问题)"
 	echo -e "${FONT_PINK_UNDERLINE}editLocalReleaseNote${FONT_RES}(本地版本释放记录)  ${FONT_BLUE_UNDERLINE}editRemoteReleaseNote${FONT_RES}(远程版本释放记录)"
 }
@@ -106,7 +107,57 @@ alias clsEa='adb shell pm clear com.ea.aiot.eaglelauncher'
 alias clsFal='adb shell pm clear com.ea.aiot.falconlauncher'
 alias clsHawk='adb shell pm clear com.ea.aiot.hawklauncher'
 
-alias vaiot_help='cat /d/workspace/开发资源.md'
+##alias vaiot_help='cat /d/workspace/开发资源.md'
+function vaiot_develop_help(){
+        echo -e "${BG_RED}*****15.6寸屏配置记录*****${FONT_RES}"
+        echo -e "${FONT_YELLOW_UNDERLINE}万象${FONT_RES}：空调网关（需要添加3到5个空调）、新风网关、智能计量计（一键断电）"	
+		echo -e "${FONT_BLUE_UNDERLINE}万物${FONT_RES}：智能计量计（一键断电）、三键开关、八合一空气盒子"
+
+        echo -e "${BG_GREEN}*****配网手机号*****${FONT_RES}"		
+		echo -e "${FONT_GREEN_UNDERLINE}dev环境${FONT_RES}：13213333367    1234@com"
+		echo -e "${FONT_YELLOW_UNDERLINE}beta环境${FONT_RES}：13111112235    1234@com"
+		echo -e "${FONT_RED_UNDERLINE}prod环境${FONT_RES}：13200001124    1234@com"
+		
+		echo -e "${BG_YELLOW}*****OTA配置*****${FONT_RES}"
+		echo -e "${FONT_GREEN_UNDERLINE}说明${FONT_RES}：运营平台boss环境，账户密码统一为：admin  1234@com"
+		echo -e "${FONT_RED_UNDERLINE}dev环境${FONT_RES}：https://boss-dev.vaiotsmart.com:10001/appCenter/versionManage"
+		echo -e "${FONT_GREEN_UNDERLINE}prod环境${FONT_RES}：https://boss.vaiot.com/appCenter/versionManage"
+
+		echo -e "${BG_GREEN}*****添加楼盘数据*****${FONT_RES}"
+		echo -e "${FONT_GREEN_UNDERLINE}说明${FONT_RES}：运营平台地址，账户密码为：assets  1234@com"
+		echo -e "${FONT_RED_UNDERLINE}dev环境${FONT_RES}：https://sop-dev.vaiotsmart.com:10001/community/construction/worker"
+		
+		echo -e "${BG_RED}*****figima*****${FONT_RES}"
+		echo -e "${FONT_GREEN_UNDERLINE}说明${FONT_RES}：个人账户，账户密码为：yaz937231979@163.com  yinazh3083"
+		echo -e "${FONT_RED_UNDERLINE}dev环境${FONT_RES}：https://sop-dev.vaiotsmart.com:10001/community/construction/worker"
+		
+		echo -e "${BG_YELLOW}*****开发导航*****${FONT_RES}"
+		echo -e "${FONT_GREEN_UNDERLINE}页面标识对照表${FONT_RES}：https://docs.vaiotsmart.com/pages/viewpage.action?pageId=13500879"
+		echo -e "${FONT_RED_UNDERLINE}IOT物接入流程${FONT_RES}：https://docs.vaiotsmart.com/pages/viewpage.action?pageId=5210116"
+		echo -e "${FONT_YELLOW_UNDERLINE}86p屏版本发布${FONT_RES}：https://docs.vaiotsmart.com/pages/viewpage.action?pageId=18778373"
+		echo -e "${FONT_BLUE_UNDERLINE}jira${FONT_RES}：https://jira.vaiotsmart.com/"
+		echo -e "${FONT_PINK_UNDERLINE}gitlab${FONT_RES}：https://git.vaiotsmart.com/users/sign_in"
+		echo -e "${FONT_YELLOW_UNDERLINE}metersphere${FONT_RES}：https://metersphere.vaiotsmart.com/login#/"
+		
+}
+
+function code_help(){
+		echo -e "${FONT_GREEN_UNDERLINE}重新挂载指令${FONT_RES}：mount -o remount -rw /dnake/bin"
+}
+
+## 开发用到的网址
+function vaiot_url_help(){
+        echo -e "${FONT_RED_UNDERLINE}项目管理系统${FONT_RES}:http://10.255.52.91:8082/automation/index.jsp"
+		echo -e "${FONT_BLUE_UNDERLINE}长城号${FONT_RES}: https://4a.gwm.cn/index"
+		echo -e "${FONT_YELLOW_UNDERLINE}绩效${FONT_RES}: https://eapms.gwm.cn/login"
+		echo -e "${FONT_GREEN_UNDERLINE}财务共享平台${FONT_RES}:http://fssc.gwm.cn/react-basic-web/login"
+		echo -e "${FONT_RED_UNDERLINE}企业数字化平台${FONT_RES}:http://platform.paas.gwm.cn/"
+##		echo -e "${FONT_PINK_UNDERLINE}项目管理系统${FONT_RES}:"
+##		echo -e "${FONT_GREEN_UNDERLINE}项目管理系统${FONT_RES}:"
+##		echo -e "${FONT_BLUE_UNDERLINE}项目管理系统${FONT_RES}:"
+##		echo -e "${FONT_YELLOW_UNDERLINE}项目管理系统${FONT_RES}:"
+##		echo -e "${FONT_RED_UNDERLINE}项目管理系统${FONT_RES}:"
+}
 alias editVaiotDoc='start /d/workspace/开发资源.md'
 
 alias gateway_help='cat /d/workspace/开发配网遇到的问题.md'
