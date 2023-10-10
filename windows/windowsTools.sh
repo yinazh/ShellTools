@@ -17,6 +17,7 @@ alias startDpan='start /d/'
 alias startProgram='start /d/workspace/program'
 alias startDownload='start /c/Users/Administrator/Downloads'
 alias startWorkplace='start /d/workspace'
+alias startReleaseSpace='start /d/workspace/releaseSpace'
 
 ## for Windows 工作目录
 alias toWorkplace='cd /d/workspace/'
@@ -27,6 +28,7 @@ alias toLogSpace='cd /d/workspace/logspace'
 alias toShellSpace='cd /d/code/ShellTools'
 alias toDpan='cd /d/'
 alias toCode='cd /d/code'
+alias toReleaseSpace='cd /d/workspace/releaseSpace'
 
 
 ## windows下开发软件列表
