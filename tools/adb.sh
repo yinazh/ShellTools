@@ -216,13 +216,12 @@ alias abug='adb bugreport'
 alias pidcat='python ${SHELL_DIR}/tools/pidcat.py'
 
 function alogcat(){
-  DATE=`date "+%Y%m%d_%H%M%S"`
+  DATE=`date "+%y%m%d%H%M%S"`
   #echo ${DATE}
   LOCAL_PATH=$(pwd)
   #echo $LOCAL_PATH
   adb logcat -c ;
-  echo "start catch log"
-  echo "**************************************"
+  echo "log..."
   if [ -z "$1" ] ;then
     FILENAME="log_${DATE}.log"
     echo $FILENAME
@@ -250,8 +249,6 @@ function alogcat(){
       adb logcat -v time | grep $1 > ${LOCAL_PATH}/$FILENAME
     fi
   fi
-  echo "**************************************"
-  echo "end catch log"
 }
 
 

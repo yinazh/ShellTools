@@ -15,7 +15,7 @@ function sharkApk(){
 
 function uncompileApk(){
     if [ "$1" ];then
-       java -jar /d/code/ShellTools/android/apktool_2.6.1.jar d  -f $1 /d/workspace/test/
+       java -jar /d/code/ShellTools/android/apktool_2.6.1.jar d  -f $1 /d/
     else
        echo "apk is null"
     fi
