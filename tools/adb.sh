@@ -351,6 +351,7 @@ alias aSufaceFlinger='adb shell dumpsys SurfaceFlinger'
 ##测试性能，后面加包名
 alias agfxinfo='adb shell dumpsys gfxinfo ' 
 
+## 设置系统数据库配置
 alias aSystem='adb shell settings list system'
 alias aGlobal='adb shell settings list global'
 alias aSecure='adb shell settings list secure'
@@ -361,6 +362,25 @@ alias awSystem='adb shell settings put system'
 alias awGlobal='adb shell settings put global'
 alias awSecure='adb shell settings put secure'
 
+##设置息屏时间
+alias setScreenOffTime='awSystem screen_off_timeout'
+alias getScreenOffTime='arSystem screen_off_timeout'
+##设置屏幕亮度
+alias setScreenBright='awSystem screen_brightness'
+alias getScreenBright='arSystem screen_brightness'
+##通过网络获取时间状态
+alias setAutoTime='awGlobal auto_time'
+alias getAutoTime='arGlobal auto_time'
+##获取系统默认输入发
+alias getDefaultInputMethod='arSecure default_input_method'
+alias setDefaultInputMethod='awSecure default_input_method'
+##自动调节亮度
+alias setScreenBightMode='awSystem screen_brightness_mode'
+alias getScreenBrightMode='arSystem screen_brightness_mode'
+##屏幕点击位置
+alias setShowTouches='awSystem show_touches'
+##屏幕点击i位置
+alias setPointerLocation='awSystem pointer_location'
 
 #####获取系统版本号
 function afPkgVsion(){
@@ -436,9 +456,10 @@ function screenCapFile(){
 
 ### 打开原生应用
 alias startSettings='adb shell am start com.android.settings'
+### 打开开发者模式页面
+alias startDevelopSetting='adb shell am start -n com.android.settings/com.android.settiings.DevelopmentSettings'
 
 alias closeAdb='adb shell settings put global adb_enabled 0'
 alias openWifi='adb shell svc wifi enable'
 alias closeWifi='adb shell svc wifi disable'
-
 
