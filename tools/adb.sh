@@ -316,8 +316,9 @@ function android_system_help(){
 	echo -e "${FONT_BLUE_UNDERLINE}awmSize${FONT_RES}  ${FONT_YELLOW_UNDERLINE}awmSizeReset${FONT_RES}  ${FONT_BLUE_UNDERLINE}adensity${FONT_RES}  ${FONT_YELLOW_UNDERLINE}adensityReset${FONT_RES}  ${FONT_RED_UNDERLINE}adeviceId${FONT_RES}  ${FONT_GREEN_UNDERLINE}aipWlan${FONT_RES}  ${FONT_GREEN_UNDERLINE}aipEth${FONT_RES}  ${FONT_RED_UNDERLINE}awindow${FONT_RES}"
 	echo -e "${FONT_GREEN_UNDERLINE}aAndroidVersion${FONT_RES}  ${FONT_YELLOW_UNDERLINE}asdk${FONT_RES}  ${FONT_RED_UNDERLINE}abuildProp${FONT_RES} ${FONT_PINK_UNDERLINE}acpuSupl${FONT_RES}  ${FONT_RED_UNDERLINE}advkHeapSize${FONT_RES}  ${FONT_GREEN_UNDERLINE}aSufaceFlinger${FONT_RES}  ${FONT_YELLOW_UNDERLINE}agfxinfo${FONT_RES}(测试性能pkg)"
 	echo -e "${FONT_RED_UNDERLINE}aSystem${FONT_RES}(system属性列表)  ${FONT_GREEN_UNDERLINE}aGlobal${FONT_RES}(global属性列表)  ${FONT_YELLOW_UNDERLINE}aSecure${FONT_RES}(secure属性列表)"
+	echo -e "${FONT_BLUE_UNDERLINE}r/wShowTouches${FONT_RES}(屏幕點擊位置)  ${FONT_YELLOW_UNDERLINE}r/wPointerLocation${FONT_RES}(屏幕點擊位置坐標)"
 	echo -e "${FONT_RED_UNDERLINE}arSystem${FONT_RES}   ${FONT_GREEN_UNDERLINE}arGlobal${FONT_RES}  ${FONT_YELLOW_UNDERLINE}arSecure${FONT_RES}  ${FONT_RED_UNDERLINE}awSystem${FONT_RES}  ${FONT_GREEN_UNDERLINE}awGlobal${FONT_RES}  ${FONT_YELLOW_UNDERLINE}awSecure${FONT_RES}"
-	echo -e "${FONT_YELLOW_UNDERLINE}startSettings${FONT_RES}  ${FONT_PINK_UNDERLINE}closeAdb${FONT_RES}  ${FONT_GREEN_UNDERLINE}openWifi${FONT_RES}  ${FONT_RED_UNDERLINE}closeWifi${FONT_RES}"
+	echo -e "${FONT_YELLOW_UNDERLINE}startSettings${FONT_RES}  ${FONT_BLUE_UNDERLINE}startDevelopSettings${FONT_RES}  ${FONT_PINK_UNDERLINE}closeAdb${FONT_RES}  ${FONT_GREEN_UNDERLINE}openWifi${FONT_RES}  ${FONT_RED_UNDERLINE}closeWifi${FONT_RES}"
 }
 
 
@@ -363,24 +364,27 @@ alias awGlobal='adb shell settings put global'
 alias awSecure='adb shell settings put secure'
 
 ##设置息屏时间
-alias setScreenOffTime='awSystem screen_off_timeout'
-alias getScreenOffTime='arSystem screen_off_timeout'
+alias wScreenOffTime='awSystem screen_off_timeout'
+alias rScreenOffTime='arSystem screen_off_timeout'
 ##设置屏幕亮度
-alias setScreenBright='awSystem screen_brightness'
-alias getScreenBright='arSystem screen_brightness'
+alias wScreenBright='awSystem screen_brightness'
+alias rScreenBright='arSystem screen_brightness'
 ##通过网络获取时间状态
-alias setAutoTime='awGlobal auto_time'
-alias getAutoTime='arGlobal auto_time'
+alias wAutoTime='awGlobal auto_time'
+alias rAutoTime='arGlobal auto_time'
 ##获取系统默认输入发
-alias getDefaultInputMethod='arSecure default_input_method'
-alias setDefaultInputMethod='awSecure default_input_method'
+alias rDefaultInputMethod='arSecure default_input_method'
+alias wDefaultInputMethod='awSecure default_input_method'
 ##自动调节亮度
-alias setScreenBightMode='awSystem screen_brightness_mode'
-alias getScreenBrightMode='arSystem screen_brightness_mode'
+alias wScreenBightMode='awSystem screen_brightness_mode'
+alias rScreenBrightMode='arSystem screen_brightness_mode'
 ##屏幕点击位置
-alias setShowTouches='awSystem show_touches'
-##屏幕点击i位置
-alias setPointerLocation='awSystem pointer_location'
+alias wShowTouches='awSystem show_touches'
+alias rShowTouches='arSystem show_touches'
+##屏幕点击位置坐標
+alias wPointerLocation='awSystem pointer_location'
+alias rPointerLocation='arSystem pointer_location'
+
 
 #####获取系统版本号
 function afPkgVsion(){
