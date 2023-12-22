@@ -210,8 +210,9 @@ function logcat_help(){
 alias alogt='adb logcat -v time'
 alias alogc='adb logcat -c'
 alias alruntime='adb logcat -s AndroidRuntime'
-alias alogw="adb logcat "\*:W""
-alias aloge="adb logcat "\*:E""
+alias alogd='adb logcat \*:D'
+alias alogw='adb logcat \*:W'
+alias aloge='adb logcat \*:E'
 alias abug='adb bugreport'
 alias pidcat='python ${SHELL_DIR}/tools/pidcat.py'
 
@@ -221,7 +222,7 @@ function alogcat(){
   LOCAL_PATH=$(pwd)
   #echo $LOCAL_PATH
   adb logcat -c ;
-  echo "log..."
+  #echo "log..."
   if [ -z "$1" ] ;then
     FILENAME="log_${DATE}.log"
     echo $FILENAME
