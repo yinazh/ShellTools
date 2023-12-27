@@ -114,10 +114,14 @@ function vaiot_develop_help(){
 		echo -e "${FONT_BLUE_UNDERLINE}万物${FONT_RES}：智能计量计（一键断电）、三键开关、八合一空气盒子"
 
         echo -e "${BG_GREEN}*****配网手机号*****${FONT_RES}"		
+	        echo -e "**老账户，废弃**"
 		echo -e "${FONT_GREEN_UNDERLINE}dev环境${FONT_RES}：13213333367    1234@com"
 		echo -e "${FONT_YELLOW_UNDERLINE}beta环境${FONT_RES}：13111112235    1234@com"
 		echo -e "${FONT_RED_UNDERLINE}prod环境${FONT_RES}：13200001124    1234@com"
-		
+		echo -e "**新账户，及业主账号**"
+		echo -e "${FONT_RED_UNDERLINE}新账号 13406334229   验证码6666  直接使用爱情芳华里1702的房间${FONT_RES}"
+
+
 		echo -e "${BG_YELLOW}*****OTA配置*****${FONT_RES}"
 		echo -e "${FONT_GREEN_UNDERLINE}说明${FONT_RES}：运营平台boss环境，账户密码统一为：admin  1234@com"
 		echo -e "${FONT_RED_UNDERLINE}dev环境${FONT_RES}：https://boss-dev.vaiotsmart.com:10001/appCenter/versionManage"
