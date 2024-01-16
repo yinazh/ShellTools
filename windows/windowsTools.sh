@@ -21,7 +21,7 @@ alias startReleaseSpace='start /d/workspace/releaseSpace'
 
 ## for Windows 工作目录
 alias toWorkplace='cd /d/workspace/'
-alias toDownload='cd /c/Users/Administrator/Downloads'
+alias toDownload='cd /c/Users/GW00298416/Downloads'
 alias toProgram='cd /d/workspace/program'
 alias toShare='cd /d/workspace/ShareApk'
 alias toLogSpace='cd /d/workspace/logspace'
