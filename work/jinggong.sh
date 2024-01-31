@@ -120,11 +120,13 @@ function vaiot_develop_help(){
 		echo -e "${FONT_RED_UNDERLINE}prod环境${FONT_RES}：13200001124    1234@com"
 		echo -e "**新账户，及业主账号**"
 		echo -e "${FONT_RED_UNDERLINE}新账号 13406334229   验证码6666  直接使用爱情芳华里1702的房间${FONT_RES}"
-
+                echo -e "**新账户策略**"
+		echo -e "自身手机号，密码：220509@com"
 
 		echo -e "${BG_YELLOW}*****OTA配置*****${FONT_RES}"
 		echo -e "${FONT_GREEN_UNDERLINE}说明${FONT_RES}：运营平台boss环境，账户密码统一为：admin  1234@com"
 		echo -e "${FONT_RED_UNDERLINE}dev环境${FONT_RES}：https://boss-dev.vaiotsmart.com:10001/appCenter/versionManage"
+		echo -e "${FONT_BLUE_UNDERLINE}beta环境${FONT_RES}: https://boss-beta.vaiot.com/basicInformation/area/areaManage"
 		echo -e "${FONT_GREEN_UNDERLINE}prod环境${FONT_RES}：https://boss.vaiot.com/appCenter/versionManage"
 
 		echo -e "${BG_GREEN}*****添加楼盘数据*****${FONT_RES}"
