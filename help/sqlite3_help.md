@@ -12,7 +12,7 @@ $.schema
 ##查看指定表的创建语句
 $.schema [table_name]
 
-##已sql语句的形式列出表内容
+##以sql语句的形式列出表内容
 $.dump table_name
 
 ##设置显示信息的分隔符

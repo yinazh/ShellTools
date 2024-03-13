@@ -21,10 +21,11 @@ source ${TOOLS_PATH}/tools/apt.sh
 source ${TOOLS_PATH}/work/jinggong.sh
 source ${TOOLS_PATH}/windows/windowsTools.sh
 source ${TOOLS_PATH}/user.sh
+source ${TOOLS_PATH}/tools/time.sh
 
 function helps(){
-        adb_tools_help
-	git_help
-	doc_help
-	windows_help
+	echo -e "${FONT_RED_UNDERLINE}个人信息帮助${FONT_RES}： user_help"
+	echo -e "${FONT_BLUE_UNDERLINE}精工帮助${FONT_RES}： jinggong_help"
+    echo -e "${FONT_YELLOW_UNDERLINE}开发帮助${FONT_RES}： adb_tools_help， keydown_help， broad_help， logcat_help， app_runtime_help， android_help， android_system_help， debug_help，  adb_tools_help， git_help， doc_help， windows_help"
+    echo -e "${FONT_YELLOW_UNDERLINE}文档帮助${FONT_RES}：doc_help"
 }

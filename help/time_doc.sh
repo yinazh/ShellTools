@@ -1,9 +1,4 @@
 #!/bin/bash
-## time  2016-09-01
-## http://www.aqzt.com
-##email: ppabc@qq.com
-##robert yu
-##centos 6
 
 ####昨天日期（1天以前）
 date -d last-day +%Y-%m-%d 
