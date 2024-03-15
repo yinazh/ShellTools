@@ -20,7 +20,6 @@ source ${TOOLS_PATH}/tools/apt.sh
 #source ${TOOLS_PATH}/work/puppyTools.sh
 source ${TOOLS_PATH}/work/jinggong.sh
 source ${TOOLS_PATH}/windows/windowsTools.sh
-source ${TOOLS_PATH}/user.sh
 source ${TOOLS_PATH}/tools/time.sh
 
 function helps(){
