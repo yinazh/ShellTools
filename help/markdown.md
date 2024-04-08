@@ -1,5 +1,10 @@
 # markdown使用语法
 
+## 在VScode中常用插件
+1. Markdown Kroki UML绘图
+2. PlantUML
+3. PlantUML Simple Viewer
+
 ## 图片插入语法  
 > 多种语法可以实现，如下：
 <div align=center> <img src="file:D:/workspace/picture/W0.png" width=80%/></div>  
