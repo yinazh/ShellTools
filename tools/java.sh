@@ -7,7 +7,7 @@
 
 function sharkApk(){
 	if [ "$1" ];then
-       java -jar /d/code/ShellTools/source/ClassyShark.jar -open $1
+       java -jar /d/tools/ShellTools/source/ClassyShark.jar -open $1
     else
        echo "apk is null"
     fi
@@ -15,7 +15,7 @@ function sharkApk(){
 
 function uncompileApk(){
     if [ "$1" ];then
-       java -jar /d/code/ShellTools/android/apktool_2.6.1.jar d  -f $1 /d/
+       java -jar /d/tools/ShellTools/source/apktool_2.6.1.jar d  -f $1 /d/
     else
        echo "apk is null"
     fi

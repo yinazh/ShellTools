@@ -2,7 +2,7 @@
 
 ## for adb tools
 
-export SHELL_DIR="${CMDER_ROOT}/../../code/ShellTools"
+export SHELL_DIR="${CMDER_ROOT}/../ShellTools"
 
 ### adb指令说明文档
 function adb_tools_help(){
@@ -310,7 +310,7 @@ alias aBootloader='adb reboot bootloader'
 alias aRecovery='adb reboot recovery'
 alias aEdl='adb reboot edl'
 alias aDisverity='adb disable-verity'
-
+alias aAdloader='adb reboot autodloader'
 
 function android_system_help(){
 	echo -e "${FONT_RED_UNDERLINE}arprop${FONT_RES}(getprop)  ${FONT_GREEN_UNDERLINE}awprop${FONT_RES}(setprop)	${FONT_BLUE_UNDERLINE}abattery${FONT_RES}  ${FONT_YELLLOW_UNDERLINE}acpuInof${FONT_RES}  ${FONT_PINK_UNDERLINE}acpuInfoM${FONT_RES}  ${FONT_GREEN_UNDERLINE}amemInfo${FONT_RES}  ${FONT_RED_UNDERLINE}amodel${FONT_RES}  ${FONT_BLUE_UNDERLINE}amac${FONT_RES}"
