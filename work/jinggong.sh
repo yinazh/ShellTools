@@ -158,11 +158,6 @@ function vaiot_url_help(){
 		echo -e "${FONT_YELLOW_UNDERLINE}绩效${FONT_RES}: https://eapms.gwm.cn/login"
 		echo -e "${FONT_GREEN_UNDERLINE}财务共享平台${FONT_RES}:http://fssc.gwm.cn/react-basic-web/login"
 		echo -e "${FONT_RED_UNDERLINE}企业数字化平台${FONT_RES}:http://platform.paas.gwm.cn/"
-##		echo -e "${FONT_PINK_UNDERLINE}项目管理系统${FONT_RES}:"
-##		echo -e "${FONT_GREEN_UNDERLINE}项目管理系统${FONT_RES}:"
-##		echo -e "${FONT_BLUE_UNDERLINE}项目管理系统${FONT_RES}:"
-##		echo -e "${FONT_YELLOW_UNDERLINE}项目管理系统${FONT_RES}:"
-##		echo -e "${FONT_RED_UNDERLINE}项目管理系统${FONT_RES}:"
 }
 alias editVaiotDoc='start /d/workspace/开发资源.md'
 
