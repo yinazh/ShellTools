@@ -27,7 +27,7 @@ alias hList='hdc list targets'
 alias hListV='hdc list targets -v'
 
 #设备UDID
-alias hUdid='hdc shell bm get --uuid'
+alias hUdid='hdc shell bm get --udid'
 
 #设备信息
 alias hrProp='hdc shell param get'
