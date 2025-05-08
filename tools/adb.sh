@@ -214,6 +214,8 @@ alias alogd='adb logcat \*:D'
 alias alogw='adb logcat \*:W'
 alias aloge='adb logcat \*:E'
 alias abug='adb bugreport'
+alias alogg='adb logcat | grep '
+alias alogf='adb logcat | findstr '
 alias pidcat='python ${SHELL_DIR}/tools/pidcat.py'
 
 function alogcat(){
@@ -259,6 +261,8 @@ function app_runtime_help(){
 	echo -e "${FONT_GREEN_UNDERLINE}afPkgVsion${FONT_RES}(应用版本pkg)  ${FONT_BLUE_UNDERLINE}alpkgs${FONT_RES}(列出所有应用)  ${FONT_RED_UNDERLINE}alSysPkgs${FONT_RES}(列举系统应用)  ${FONT_YELLOW_UNDERLINE}alPkgFrom(${FONT_RES}显示安装来源)  ${FONT_GREEN_UNDERLINE}alPkgAs${FONT_RES}(显示包及关联文件)"
 }
 alias atop='adb shell top'
+alias atopg='adb shell top | grep '
+alias atopf='adb shell top | findstr '
 alias atop10='adb shell top -s 10' #查看占用内存前10 的app
 alias adumps='adb shell dumpsys activity'
 alias adumAcy='adb shell dumpsys activity activities | grep mFocusedActivity'
@@ -469,3 +473,8 @@ alias closeAdb='adb shell settings put global adb_enabled 0'
 alias openWifi='adb shell svc wifi enable'
 alias closeWifi='adb shell svc wifi disable'
 
+### 设置USB模式
+alias aGetUsbType='adb shell svc usb getFunctions'
+alias aSetUsbType='adb shell svc usb setFunctions '
+alias aSetUsbMTP='adb shell svc usb setFunctions mtp'
+alias aSetUsbCharge='adb shell svc usb setFunctions'
