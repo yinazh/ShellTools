@@ -12,19 +12,34 @@ alias hShl='hdc shell'
 #重启设备
 alias hReboot='hdc target boot'
 
+#挂载设备
+alias hMont='hdc target mount'
+alias hRemot='hdc shell "mount -o remount,rw /"'
+
+# 抓取日志
+alias hlog='hdc shell hilog'
+alias hloge='hdc shell hilog -g "Error"'
+alias hlogd='hdc shell hilog -g "Debug"'
+alias hlogi='hdc shell hilog -g "Info"'
+alias hlogw='hdc shell hilog -g "Warning"'
+alias hlogT='hdc shell hilog -T '
+alias hlogc='hdc shell hilog -c'
+alias hlogStore='hdc file rece data/log/hilog/ .'
+
+
 #进入autodloader模式，刷机
 alias hAdloader='hdc shell reboot autodloader'
 
 #查看HDC版本
 alias hVersion='hdc -v'
-alias hKill='hdc kill'
-alias hStart='hdc start -r'
+#alias hKill='hdc kill'
+#alias hStart='hdc start -r'
 
 
 #列出连接的设备
-alias hList='hdc list targets'
+alias hDev='hdc list targets'
 #列出连接的设备,显示详细信息
-alias hListV='hdc list targets -v'
+alias hDevV='hdc list targets -v'
 
 #设备UDID
 alias hUdid='hdc shell bm get --udid'
@@ -137,3 +152,6 @@ alias hBack='hdc shell uitest uiInput keyEvent Back'
 alias hScreenCap='hdc shell uitest screenCap'
 #屏幕截图指定路径
 alias hScreenCapTo='hdc shell uitest screenCap -t'
+
+# hdc连接IP
+alias hconip='hdc tconn '

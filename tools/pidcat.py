@@ -20,7 +20,6 @@ limitations under the License.
 # Originally written by Jeff Sharkey, http://jsharkey.org/
 # Piping detection and popen() added by other Android team members
 # Package filtering and output improvements by Jake Wharton, http://jakewharton.com
-
 import argparse
 import sys
 import re
@@ -359,4 +358,5 @@ while adb.poll() is None:
     message = matcher.sub(replace, message)
 
   linebuf += indent_wrap(message)
+
   print(linebuf.encode('utf-8'))

@@ -21,6 +21,7 @@ source ${TOOLS_PATH}/tools/hdc.sh
 #source ${TOOLS_PATH}/work/puppyTools.sh
 #source ${TOOLS_PATH}/work/jinggong.sh
 source ${TOOLS_PATH}/work/superred.sh
+source ${TOOLS_PATH}/windows/script/windowsCommon.sh
 source ${TOOLS_PATH}/windows/windowsTools.sh
 source ${TOOLS_PATH}/user.sh
 source ${TOOLS_PATH}/tools/time.sh

@@ -478,3 +478,6 @@ alias aGetUsbType='adb shell svc usb getFunctions'
 alias aSetUsbType='adb shell svc usb setFunctions '
 alias aSetUsbMTP='adb shell svc usb setFunctions mtp'
 alias aSetUsbCharge='adb shell svc usb setFunctions'
+
+### 查看USB模式
+alias arUsbType='adb shell dumpsys usb'
