@@ -26,16 +26,16 @@ function adb_help(){
 }
 
 ### adb服务指令
-alias asser='adb start-server'
-alias akser='adb kill-server'
+alias astartser='adb start-server'
+alias akillser='adb kill-server'
 
 ### 操作指令
 alias ashl='adb shell'
-alias arot='adb root'
-alias arbot='adb reboot'
-alias amont='adb remount'
+alias aroot='adb root'
+alias areboot='adb reboot'
+alias aremount='adb remount'
 alias adev='adb devices'
-alias acon='adb connect'
+alias aconn='adb connect'
 function condev(){
   rootinfo=`adb root`
   alreadyRoot="adbd is already running as root"
@@ -113,8 +113,8 @@ alias ashutDown='adb shell reboot -p'
 alias astartW="adb shell am start -W "
 
 ### 模拟操作
-alias apl='adb pull'
-alias aph='adb push'
+alias apull='adb pull'
+alias apush='adb push'
 alias astart='adb shell am start'
 alias abroad='adb shell am broadcast -a'
 alias acls='adb shell pm clear'
@@ -151,6 +151,7 @@ alias keyVol+='adb shell input keyevent 24'
 alias keyVol-='adb shell input keyevent 25'
 alias keyPower='adb shell input keyevent 26'
 alias keyMute='adb shell input keyevent 164'
+alias keyRecents='adb shell input keyevent 187'
 alias keyScreenCap='adb shell input keyevent 120'
 alias keyScreenOn='adb shell input keyevent 224'
 alias keyScreenOff='adb shell input keyevent 223'
@@ -372,6 +373,7 @@ alias awSecure='adb shell settings put secure'
 ##设置息屏时间
 alias wScreenOffTime='awSystem screen_off_timeout'
 alias rScreenOffTime='arSystem screen_off_timeout'
+alias keepScreenOn='awSystem screen_off_timeout 2147483647'
 ##设置屏幕亮度
 alias wScreenBright='awSystem screen_brightness'
 alias rScreenBright='arSystem screen_brightness'
@@ -461,7 +463,7 @@ function screenCapFile(){
     LOCAL_PATH=$(pwd)
 	echo ${LOCAL_PATH}
 	aScreenCap;
-	apul sdcard/screen.png ${LOCAL_PATH}/
+	apull sdcard/screen.png ${LOCAL_PATH}/
 }
 
 ### 打开原生应用

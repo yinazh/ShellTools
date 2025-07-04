@@ -35,11 +35,8 @@ function helps(){
     echo -e "          android_help， android_system_help， debug_help，  adb_tools_help"
     echo -e "          git_help， doc_help， windows_help"
     
-    
-    
     echo -e "${FONT_YELLOW_UNDERLINE}文档帮助${FONT_RES}：doc_help"
 }
 
-alias viUserInfo='vi /d/tools/ShellTools/user.sh'
-
-alias viWorkInfo='vi /d/tools/ShellTools/work/superred.sh'
+alias viUserInfo='vi ${TOOLS_PATH}/user.sh'
+alias viWorkInfo='vi ${TOOLS_PATH}/work/superred.sh'
