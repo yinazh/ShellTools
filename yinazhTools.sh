@@ -1,3 +1,4 @@
+git
 #!/bin/sh
 
 #echo $(pwd)
@@ -23,7 +24,7 @@ source ${TOOLS_PATH}/tools/hdc.sh
 source ${TOOLS_PATH}/work/superred.sh
 source ${TOOLS_PATH}/windows/script/windowsCommon.sh
 source ${TOOLS_PATH}/windows/windowsTools.sh
-source ${TOOLS_PATH}/user.sh
+#source ${TOOLS_PATH}/user.sh
 source ${TOOLS_PATH}/tools/time.sh
 
 function helps(){
@@ -38,5 +39,5 @@ function helps(){
     echo -e "${FONT_YELLOW_UNDERLINE}文档帮助${FONT_RES}：doc_help"
 }
 
-alias viUserInfo='vi ${TOOLS_PATH}/user.sh'
+#alias viUserInfo='vi ${TOOLS_PATH}/user.sh'
 alias viWorkInfo='vi ${TOOLS_PATH}/work/superred.sh'
