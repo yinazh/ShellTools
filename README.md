@@ -25,4 +25,5 @@
 |[cmder](https://cmder.en.lo4d.com/windows)|windows下好用的terminal工具|界面美观，识别linux指令，可配置自定义脚本指令|
 
 
-**注意**：部分包含的敏感信息，已隐藏
+**注意**：
+1. 自用脚本，部分包含的敏感信息，已隐藏
